@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/21 17:37:09 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/21 21:43:16 by syamashi         ###   ########.fr       */
+/*   Created: 2021/05/24 11:11:17 by syamashi          #+#    #+#             */
+/*   Updated: 2021/05/24 19:25:23 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "HumanB.hpp"
 
-int main()
+HumanB::HumanB(std::string name) : name(name)
 {
-	Phonebook	pb;
-	std::string	cmd;
-	while (1)
-	{
-		std::cout << PHONEBOOK;
-		std::getline(std::cin, cmd);
-		if (cmd == "ADD")
-			pb.addcmd();
-		else if (cmd == "SEARCH")
-			pb.searchcmd();
-		else if (cmd == "EXIT")
-			pb.exitcmd();
-	}
-	return (0);
+}
+
+void	HumanB::setWeapon(Weapon &wp)
+{
+	this->ptr = &wp;
+}
+
+void	HumanB::attack()
+{
+	if (this->ptr)
+		std::cout << this->name << " attacks with his " << this->ptr->getType() << std::endl;
+	else
+		std::cout << this->name << " attacks with his " << "hand" << std::endl;
 }

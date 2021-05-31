@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/21 17:37:09 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/21 21:43:16 by syamashi         ###   ########.fr       */
+/*   Created: 2021/05/22 11:54:40 by syamashi          #+#    #+#             */
+/*   Updated: 2021/05/22 14:50:13 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "Zombie.hpp"
 
-int main()
+Zombie::Zombie(const std::string &name, const std::string &type)
 {
-	Phonebook	pb;
-	std::string	cmd;
-	while (1)
-	{
-		std::cout << PHONEBOOK;
-		std::getline(std::cin, cmd);
-		if (cmd == "ADD")
-			pb.addcmd();
-		else if (cmd == "SEARCH")
-			pb.searchcmd();
-		else if (cmd == "EXIT")
-			pb.exitcmd();
-	}
-	return (0);
+	this->name = name;
+	this->type = type;
+}
+
+Zombie::~Zombie()
+{
+	std::cout << "[i] " << this->name << " (" << this->type<< ") " << "died. You got " << rand() % 100 << " exp!" << std::endl;
+}
+
+void	Zombie::announce()
+{
+	std::cout << "<" << name << " (" << type << ")> " << "Braiiiiiiinnnssss..." << std::endl;
 }

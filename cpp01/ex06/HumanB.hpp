@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/21 17:37:09 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/21 21:43:16 by syamashi         ###   ########.fr       */
+/*   Created: 2021/05/24 11:07:56 by syamashi          #+#    #+#             */
+/*   Updated: 2021/05/24 19:25:25 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
 
-int main()
+# include "Weapon.hpp"
+class HumanB
 {
-	Phonebook	pb;
-	std::string	cmd;
-	while (1)
-	{
-		std::cout << PHONEBOOK;
-		std::getline(std::cin, cmd);
-		if (cmd == "ADD")
-			pb.addcmd();
-		else if (cmd == "SEARCH")
-			pb.searchcmd();
-		else if (cmd == "EXIT")
-			pb.exitcmd();
-	}
-	return (0);
-}
+	public:
+		HumanB(std::string name);
+		void	setWeapon(Weapon &wp);
+		void	attack();
+	private:
+		Weapon	*ptr;
+		std::string	name;
+};
+
+#endif

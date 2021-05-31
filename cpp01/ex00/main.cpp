@@ -5,27 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/21 17:37:09 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/21 21:43:16 by syamashi         ###   ########.fr       */
+/*   Created: 2021/05/21 20:57:39 by syamashi          #+#    #+#             */
+/*   Updated: 2021/05/21 22:27:26 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "Pony.hpp"
 
 int main()
 {
-	Phonebook	pb;
-	std::string	cmd;
-	while (1)
-	{
-		std::cout << PHONEBOOK;
-		std::getline(std::cin, cmd);
-		if (cmd == "ADD")
-			pb.addcmd();
-		else if (cmd == "SEARCH")
-			pb.searchcmd();
-		else if (cmd == "EXIT")
-			pb.exitcmd();
-	}
+	std::cout << "-----Heap pony start-----" << std::endl;
+	ponyOnTheHeap();
+	std::cout << "-----Stack pony start-----" << std::endl;
+	ponyOnTheStack();
 	return (0);
 }

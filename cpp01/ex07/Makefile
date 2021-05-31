@@ -6,11 +6,11 @@
 #    By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/21 13:52:25 by syamashi          #+#    #+#              #
-#    Updated: 2021/05/24 09:29:40 by syamashi         ###   ########.fr        #
+#    Updated: 2021/05/24 19:24:51 by syamashi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = replace
 SRCS = $(shell echo *.cpp)
 OBJDIR = ./obj/
 OBJS = $(SRCS:%.cpp=$(OBJDIR)%.o)
@@ -38,8 +38,6 @@ fclean: clean
 re: fclean all
 
 test:
-	./$(NAME) "shhhhh... I think the students are asleep..."
-	./$(NAME) Damnit " ! " "Sorry students, I thought this thing was off."
-	./$(NAME)
+	./$(NAME) test.txt ", " "-"
 
 .PHONY: all fclean clean re test

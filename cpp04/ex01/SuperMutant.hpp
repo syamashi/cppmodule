@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   SuperMutant.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/21 13:52:17 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/22 08:27:41 by syamashi         ###   ########.fr       */
+/*   Created: 2021/05/29 17:25:13 by syamashi          #+#    #+#             */
+/*   Updated: 2021/05/31 09:51:01 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SUPERMUTANT_HPP
+#define SUPERMUTANT_HPP
+
 #include <iostream>
-#include <string>
-#include <locale>
+#include "Enemy.hpp"
 
-int main(int argc, char *argv[])
+class SuperMutant : public Enemy
 {
-	int	i;
-	int	j;
-	int len;
-	std::string	str;
+	private:
+    public:
+        SuperMutant();
+        ~SuperMutant();
+        SuperMutant(const SuperMutant &src);
+        SuperMutant& operator = (const SuperMutant &src);
+		void takeDamage(int damage);
+};
 
-	if (argc == 1)
-	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return 0;
-	}
-	i = 0;
-	while (++i < argc)
-	{
-		j = -1;
-		str = argv[i];
-		len = str.length();
-		while (++j < len)
-			str[j] = std::toupper(str[j]);
-		std::cout << str;
-	}
-	std::cout << std::endl;
-	return 0;
-}
+#endif

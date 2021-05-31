@@ -1,41 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Victim.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/21 13:52:17 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/22 08:27:41 by syamashi         ###   ########.fr       */
+/*   Created: 2021/05/28 15:31:39 by syamashi          #+#    #+#             */
+/*   Updated: 2021/05/29 17:15:25 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef VICTIM_HPP
+#define VICTIM_HPP
+
 #include <iostream>
-#include <string>
-#include <locale>
 
-int main(int argc, char *argv[])
+class Victim
 {
-	int	i;
-	int	j;
-	int len;
-	std::string	str;
+	public:
+		Victim();
+		Victim(const std::string &name);
+		Victim(const Victim &src);
+		~Victim();
+		std::string get_name() const;
+		virtual void getPolymorphed() const;
+		Victim& operator=(const Victim &src);
+	protected:
+		std::string name;
+	private:
+};
 
-	if (argc == 1)
-	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return 0;
-	}
-	i = 0;
-	while (++i < argc)
-	{
-		j = -1;
-		str = argv[i];
-		len = str.length();
-		while (++j < len)
-			str[j] = std::toupper(str[j]);
-		std::cout << str;
-	}
-	std::cout << std::endl;
-	return 0;
-}
+std::ostream &operator<<(std::ostream &out, const Victim &src);
+
+#endif

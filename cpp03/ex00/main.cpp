@@ -5,27 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/21 17:37:09 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/21 21:43:16 by syamashi         ###   ########.fr       */
+/*   Created: 2021/05/25 22:06:39 by syamashi          #+#    #+#             */
+/*   Updated: 2021/05/27 17:41:50 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
-	Phonebook	pb;
-	std::string	cmd;
-	while (1)
-	{
-		std::cout << PHONEBOOK;
-		std::getline(std::cin, cmd);
-		if (cmd == "ADD")
-			pb.addcmd();
-		else if (cmd == "SEARCH")
-			pb.searchcmd();
-		else if (cmd == "EXIT")
-			pb.exitcmd();
-	}
+	srand(time(NULL));
+	FragTrap a;
+	FragTrap f("SYAMASHI");
+	std::cout << "--------------------FRAG_TRAP-------------------" << std::endl;
+	f.rangedAttack("ENEMY1");
+	f.meleeAttack("ENEMY2");
+	std::cout << std::endl;
+	int nums[] = {50, 40, 30, 20, 11, 10, 9};
+	for (auto v: nums)
+		f.takeDamage(v);
+	std::cout << std::endl;
+	for (auto v: nums)
+		f.beRepaired(v);
+	std::cout << std::endl;
+	for (int i=0; i<7; i++)
+		f.vaulthunter_dot_exe("ENEMY3");
+	std::cout << std::endl;
+	std::cout << f << std::endl;
 	return (0);
 }

@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Human.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/21 13:52:17 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/22 08:27:41 by syamashi         ###   ########.fr       */
+/*   Created: 2021/05/24 10:09:47 by syamashi          #+#    #+#             */
+/*   Updated: 2021/05/24 10:47:52 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
-#include <locale>
+#include "Human.hpp"
 
-int main(int argc, char *argv[])
+Human::Human()
 {
-	int	i;
-	int	j;
-	int len;
-	std::string	str;
+	try
+	{
+		this->br = new Brain;
+	}
+	catch(std::bad_alloc)
+	{
+		std::cout << "bad_alloc" << std::endl;
+	}
+}
 
-	if (argc == 1)
-	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return 0;
-	}
-	i = 0;
-	while (++i < argc)
-	{
-		j = -1;
-		str = argv[i];
-		len = str.length();
-		while (++j < len)
-			str[j] = std::toupper(str[j]);
-		std::cout << str;
-	}
-	std::cout << std::endl;
-	return 0;
+Human::~Human()
+{
+	std::cout << "[~Human] died" << std::endl;
+	delete this->br;
+}
+
+std::string Human::identify()
+{
+	return (this->br->identify());
+}
+
+Brain& Human::getBrain()
+{
+	return (*this->br);
 }

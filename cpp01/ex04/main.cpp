@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/21 13:52:17 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/22 08:27:41 by syamashi         ###   ########.fr       */
+/*   Created: 2021/05/22 17:33:06 by syamashi          #+#    #+#             */
+/*   Updated: 2021/05/22 17:38:05 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
-#include <locale>
+#include <iomanip>
 
-int main(int argc, char *argv[])
+int main()
 {
-	int	i;
-	int	j;
-	int len;
-	std::string	str;
+	std::string	s;
+	std::string*	ptr = &s;
+	std::string&	ref = s;
 
-	if (argc == 1)
-	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return 0;
-	}
-	i = 0;
-	while (++i < argc)
-	{
-		j = -1;
-		str = argv[i];
-		len = str.length();
-		while (++j < len)
-			str[j] = std::toupper(str[j]);
-		std::cout << str;
-	}
-	std::cout << std::endl;
-	return 0;
+	s = "HI THIS IS BRAIN";
+	std::cout << std::setfill(' ') << std::setw(5) << "s:";
+	std::cout << s << std::endl;
+	std::cout << std::setfill(' ') << std::setw(5) << "*ptr:";
+	std::cout << *ptr << std::endl;
+	std::cout << std::setfill(' ') << std::setw(5) << "ref:";
+	std::cout << ref << std::endl;
+	return (0);
 }

@@ -1,41 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Peon.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/21 13:52:17 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/22 08:27:41 by syamashi         ###   ########.fr       */
+/*   Created: 2021/05/28 17:42:21 by syamashi          #+#    #+#             */
+/*   Updated: 2021/05/29 17:08:35 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef PEON_HPP
+#define PEON_HPP
+
 #include <iostream>
-#include <string>
-#include <locale>
+#include "Victim.hpp"
 
-int main(int argc, char *argv[])
+class Peon : public Victim
 {
-	int	i;
-	int	j;
-	int len;
-	std::string	str;
+	public:
+		Peon();
+		Peon(std::string name);
+		Peon(Peon const &src);
+		virtual ~Peon();
 
-	if (argc == 1)
-	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return 0;
-	}
-	i = 0;
-	while (++i < argc)
-	{
-		j = -1;
-		str = argv[i];
-		len = str.length();
-		while (++j < len)
-			str[j] = std::toupper(str[j]);
-		std::cout << str;
-	}
-	std::cout << std::endl;
-	return 0;
-}
+		Peon& operator=(const Peon &src);
+		void getPolymorphed() const;
+	private:
+};
+
+#endif

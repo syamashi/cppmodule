@@ -1,41 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   ZombieHorde.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/21 13:52:17 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/22 08:27:41 by syamashi         ###   ########.fr       */
+/*   Created: 2021/05/22 10:10:56 by syamashi          #+#    #+#             */
+/*   Updated: 2021/05/22 17:21:19 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef ZOMBIEHORDE_HPP
+# define ZOMBIEHORDE_HPP
+
 #include <iostream>
 #include <string>
-#include <locale>
+#include <time.h>
+#include "Zombie.hpp"
 
-int main(int argc, char *argv[])
+class	ZombieHorde
 {
-	int	i;
-	int	j;
-	int len;
-	std::string	str;
+	public:
+		ZombieHorde(int N);
+		~ZombieHorde();
+		void	announce();
+	private:
+		int	N;
+		Zombie*	Zs;
+};
 
-	if (argc == 1)
-	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return 0;
-	}
-	i = 0;
-	while (++i < argc)
-	{
-		j = -1;
-		str = argv[i];
-		len = str.length();
-		while (++j < len)
-			str[j] = std::toupper(str[j]);
-		std::cout << str;
-	}
-	std::cout << std::endl;
-	return 0;
-}
+#endif

@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   PlasmaRifle.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/21 13:52:17 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/22 08:27:41 by syamashi         ###   ########.fr       */
+/*   Created: 2021/05/29 17:25:56 by syamashi          #+#    #+#             */
+/*   Updated: 2021/05/31 10:32:33 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef PLASMARIFLE_HPP
+#define PLASMARIFLE_HPP
+
 #include <iostream>
-#include <string>
-#include <locale>
+#include "AWeapon.hpp"
 
-int main(int argc, char *argv[])
+class PlasmaRifle : public AWeapon
 {
-	int	i;
-	int	j;
-	int len;
-	std::string	str;
+	private:
+    public:
+        PlasmaRifle();
+        ~PlasmaRifle();
+        PlasmaRifle(const PlasmaRifle &src);
+        PlasmaRifle& operator = (const PlasmaRifle &src);
 
-	if (argc == 1)
-	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return 0;
-	}
-	i = 0;
-	while (++i < argc)
-	{
-		j = -1;
-		str = argv[i];
-		len = str.length();
-		while (++j < len)
-			str[j] = std::toupper(str[j]);
-		std::cout << str;
-	}
-	std::cout << std::endl;
-	return 0;
-}
+		void attack() const;
+};
+
+#endif

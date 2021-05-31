@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   PowerFist.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/21 13:52:17 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/22 08:27:41 by syamashi         ###   ########.fr       */
+/*   Created: 2021/05/29 17:25:52 by syamashi          #+#    #+#             */
+/*   Updated: 2021/05/31 10:32:36 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef POWERFIST_HPP
+#define POWERFIST_HPP
+
 #include <iostream>
-#include <string>
-#include <locale>
+#include "AWeapon.hpp"
 
-int main(int argc, char *argv[])
+class PowerFist : public AWeapon
 {
-	int	i;
-	int	j;
-	int len;
-	std::string	str;
+	private:
+    public:
+        PowerFist();
+        ~PowerFist();
+        PowerFist(const PowerFist &src);
+        PowerFist& operator = (const PowerFist &src);
+		
+		void attack() const;
+};
 
-	if (argc == 1)
-	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return 0;
-	}
-	i = 0;
-	while (++i < argc)
-	{
-		j = -1;
-		str = argv[i];
-		len = str.length();
-		while (++j < len)
-			str[j] = std::toupper(str[j]);
-		std::cout << str;
-	}
-	std::cout << std::endl;
-	return 0;
-}
+#endif

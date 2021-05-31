@@ -1,41 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   ZombieEvent.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/21 13:52:17 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/22 08:27:41 by syamashi         ###   ########.fr       */
+/*   Created: 2021/05/22 11:55:09 by syamashi          #+#    #+#             */
+/*   Updated: 2021/05/22 17:29:28 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
-#include <locale>
+#include "ZombieEvent.hpp"
 
-int main(int argc, char *argv[])
+Zombie*	ZombieEvent::newZombie(std:: string name)
 {
-	int	i;
-	int	j;
-	int len;
-	std::string	str;
+	Zombie	*ret;
 
-	if (argc == 1)
+	try
 	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return 0;
+		ret = new Zombie(name, this->type);
 	}
-	i = 0;
-	while (++i < argc)
+	catch(std::bad_alloc)
 	{
-		j = -1;
-		str = argv[i];
-		len = str.length();
-		while (++j < len)
-			str[j] = std::toupper(str[j]);
-		std::cout << str;
+		std::cout << "bad_alloc" << std::endl;
+		std::exit(1);
 	}
-	std::cout << std::endl;
-	return 0;
-}
+	return ret;
+};
+
+void	ZombieEvent::setZombieType(const std::string& type)
+{
+	this->type = type;
+};

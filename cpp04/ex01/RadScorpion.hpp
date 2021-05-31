@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   RadScorpion.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/21 13:52:17 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/22 08:27:41 by syamashi         ###   ########.fr       */
+/*   Created: 2021/05/29 17:25:41 by syamashi          #+#    #+#             */
+/*   Updated: 2021/05/31 09:50:45 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef RADSCORPION_HPP
+#define RADSCORPION_HPP
+
 #include <iostream>
-#include <string>
-#include <locale>
+#include "Enemy.hpp"
 
-int main(int argc, char *argv[])
+class RadScorpion : public Enemy
 {
-	int	i;
-	int	j;
-	int len;
-	std::string	str;
+	private:
+    public:
+        RadScorpion();
+        ~RadScorpion();
+        RadScorpion(const RadScorpion &src);
+        RadScorpion& operator = (const RadScorpion &src);
+		void takeDamage(int damage);
+};
 
-	if (argc == 1)
-	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return 0;
-	}
-	i = 0;
-	while (++i < argc)
-	{
-		j = -1;
-		str = argv[i];
-		len = str.length();
-		while (++j < len)
-			str[j] = std::toupper(str[j]);
-		std::cout << str;
-	}
-	std::cout << std::endl;
-	return 0;
-}
+#endif
