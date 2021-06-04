@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AssaultTerminator.hpp                              :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/31 13:25:21 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/31 15:52:07 by syamashi         ###   ########.fr       */
+/*   Created: 2021/06/04 08:03:35 by syamashi          #+#    #+#             */
+/*   Updated: 2021/06/04 10:15:34 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ASSAULTTERMINATOR_HPP
-#define ASSAULTTERMINATOR_HPP
+#ifndef ROBOTOMYREQUESTFORM_HPP
+#define ROBOTOMYREQUESTFORM_HPP
 
 #include <iostream>
-#include "ISpaceMarine.hpp"
+#include <time.h>
+#include "Form.hpp"
 
-class AssaultTerminator : public ISpaceMarine
+class RobotomyRequestForm : public Form
 {
-    private:
     public:
-        AssaultTerminator();
-        ~AssaultTerminator();
-        AssaultTerminator(const AssaultTerminator &src);
-        AssaultTerminator& operator = (const AssaultTerminator &src);
+        RobotomyRequestForm();
+        ~RobotomyRequestForm();
+        RobotomyRequestForm(const std::string &target);
+        RobotomyRequestForm(const RobotomyRequestForm &src);
+        RobotomyRequestForm& operator = (const RobotomyRequestForm &src);
 
-		ISpaceMarine* clone() const;
-		void battleCry() const;
-		void rangedAttack() const;
-		void meleeAttack() const;
+		void execute(Bureaucrat const & executor) const;
 };
 
 #endif

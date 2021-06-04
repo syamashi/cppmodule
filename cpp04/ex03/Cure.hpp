@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ISquad.hpp                                         :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/31 12:03:39 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/31 16:24:26 by syamashi         ###   ########.fr       */
+/*   Created: 2021/05/31 17:48:31 by syamashi          #+#    #+#             */
+/*   Updated: 2021/06/01 11:12:20 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ISQUAD_HPP
-#define ISQUAD_HPP
+#ifndef CURE_HPP
+#define CURE_HPP
 
 #include <iostream>
-#include "ISpaceMarine.hpp"
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
 
-class ISquad
+
+class Cure : public AMateria
 {
     private:
-	public:
-		virtual ~ISquad() {}
-		virtual int getCount() const = 0;
-		virtual ISpaceMarine* getUnit(int) const = 0;
-		virtual int push(ISpaceMarine*) = 0;
+    public:
+        Cure();
+        ~Cure();
+        Cure(const Cure &src);
+        Cure& operator = (const Cure &src);
+
+		AMateria* clone() const;
+		void use(ICharacter& target);
 };
 
 #endif

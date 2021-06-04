@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PlasmaRifle.hpp                                    :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/29 17:25:56 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/03 16:47:37 by syamashi         ###   ########.fr       */
+/*   Created: 2021/06/04 08:03:31 by syamashi          #+#    #+#             */
+/*   Updated: 2021/06/04 10:03:39 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PLASMARIFLE_HPP
-#define PLASMARIFLE_HPP
+#ifndef PRESIDENTIALPARDON_HPP
+#define PRESIDENTIALPARDON_HPP
 
 #include <iostream>
-#include "AWeapon.hpp"
+#include "Form.hpp"
 
-class PlasmaRifle : public AWeapon
+class PresidentialPardonForm : public Form
 {
-	private:
     public:
-        PlasmaRifle();
-        ~PlasmaRifle();
-        PlasmaRifle(const PlasmaRifle &src);
-        PlasmaRifle& operator = (const PlasmaRifle &src);
+        PresidentialPardonForm();
+        PresidentialPardonForm(const std::string &target);
+        ~PresidentialPardonForm();
+        PresidentialPardonForm(const PresidentialPardonForm &src);
+        PresidentialPardonForm& operator = (const PresidentialPardonForm &src);
 
-		void attack() const;
+		void execute(Bureaucrat const & executor) const;
 };
 
 #endif

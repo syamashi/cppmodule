@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 11:55:09 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/22 17:29:28 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/03 13:34:42 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ ZombieHorde::ZombieHorde(int N)
 	typesize = 4;
 	try
 	{
-		Zombie *newZs = new Zombie[N];
+		this->Zs = new Zombie[N];
 		for (int i = 0; i < N; i++)
 		{
 			std::string	t;
@@ -62,9 +62,8 @@ ZombieHorde::ZombieHorde(int N)
 			t += get_level(seed % 100 + 1);
 			t += types[seed % typesize];
 			seed = rand();
-			newZs[i].set_stats(names[seed % namesize], t);
+			this->Zs[i].set_stats(names[seed % namesize], t);
 		}
-		this->Zs = newZs;
 	}
 	catch(std::bad_alloc)
 	{
