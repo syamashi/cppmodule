@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 12:48:47 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/05 23:14:31 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/05 23:55:29 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <sstream>
 #include <cmath>
+#include <cfloat>
 
 #define TYPE_INFP 0
 #define TYPE_INFM 1

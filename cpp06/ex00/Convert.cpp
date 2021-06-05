@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 12:49:24 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/05 23:15:06 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/05 23:55:48 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,12 +141,17 @@ void Convert::ft_stoi()
 
 void Convert::ft_stof()
 {
+	std::string finput = _input;
+	// if include 'f' in string, cannot get float value.
+	finput[_input.length() - 1] = '\0';
+
 	std::stringstream s(_input);
 	s >> _f;
+	if (_f >= FLT_MAX)
+		throw (Convert::OverflowFloatException());
 	float fint = 0;
 	float ffract = std::modf(_f, &fint);
 	ffract = roundf(ffract * 10.0);
-	_f = fint + ffract / 10.0;
 
 	_c = static_cast<char>(_f);
 	_i = static_cast<int>(_f);
@@ -164,6 +169,18 @@ void Convert::ft_stof()
 		put_int("impossible");
 	else
 		put_int(_i);
+
+	if (ffract > 9)
+	{
+		ffract = 0;
+		fint++;
+	}
+	if (dfract > 9)
+	{
+		dfract = 0;
+		dint++;
+	}
+
 	put_float(fint, ffract);
 	put_double(dint, dfract);
 }
@@ -172,10 +189,11 @@ void Convert::ft_stod()
 {
 	std::stringstream s(_input);
 	s >> _d;
+	if (_d >= DBL_MAX)
+		throw (Convert::OverflowDoubleException());
 	double dint = 0;
 	double dfract = std::modf(_d, &dint);
 	dfract = round(dfract * 10.0);
-	_d = dint + dfract / 10.0;
 
 	_c = static_cast<char>(_d);
 	_i = static_cast<int>(_d);
@@ -184,7 +202,6 @@ void Convert::ft_stod()
 	float fint = 0;
 	float ffract = std::modf(_f, &fint);
 	ffract = roundf(ffract * 10.0);
-	_f = fint + ffract / 10.0;
 
 	if (_d > 127 || _d < 0)
 		put_char("impossible");
@@ -194,7 +211,22 @@ void Convert::ft_stod()
 		put_int("impossible");
 	else
 		put_int(_i);
-	put_float(fint, ffract);
+
+	if (dfract > 9)
+	{
+		dfract = 0;
+		dint++;
+	}
+	if (ffract > 9)
+	{
+		ffract = 0;
+		fint++;
+	}
+
+	if (_f >= FLT_MAX)
+		put_float("impossible");
+	else
+		put_float(fint, ffract);
 	put_double(dint, dfract);
 }
 
@@ -260,5 +292,3 @@ const char *Convert::OverflowDoubleException::what() const throw()
 {
 	return ("Overflow detected in double-type.");
 }
-
-

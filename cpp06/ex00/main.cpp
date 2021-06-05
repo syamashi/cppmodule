@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 12:45:43 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/05 22:16:01 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/05 23:56:00 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,4 @@ int main(int argc, char *argv[])
 	{
 		std::cout << ex.what() << std::endl;
 	}
-	double a = std::stod(argv[1]);
-	std::cout << a << std::endl;
 }
