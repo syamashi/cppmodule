@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 12:48:47 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/06 00:33:18 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/06 01:13:54 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@
 #define TYPE_I 4
 #define TYPE_F 5
 #define TYPE_D 6
-#define FAIL 7
 
 class Convert
 {
@@ -44,6 +43,15 @@ class Convert
 		Convert(const std::string &input);
         Convert& operator = (const Convert &src);
 
+		int get_type();
+		void ft_limits();
+		void ft_stoc();
+		void ft_stoi();
+		void ft_stof();
+		void ft_stod();
+		void set_fract(float &fract, float &intpart);
+		void set_fract(double &fract, double &intpart);
+
 		void put_char(const std::string &c);
 		void put_char(const char &c);
 		void put_int(const std::string &i);
@@ -52,13 +60,6 @@ class Convert
 		void put_float(const float &fint, const float &ffract);
 		void put_double(const std::string &d);
 		void put_double(const double &dint, const double &dfract);
-
-		int get_type();
-		void ft_limits();
-		void ft_stoc();
-		void ft_stoi();
-		void ft_stof();
-		void ft_stod();
 
 		class InvalidValueException : public std::exception
 		{

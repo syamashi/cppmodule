@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 12:49:24 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/06 00:50:07 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/06 01:14:57 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,7 +157,6 @@ void Convert::ft_stof()
 	float fint = 0;
 	float ffract = std::modf(_f, &fint);
 	ffract = roundf(ffract * 10.0);
-
 	double dint = 0;
 	double dfract = std::modf(_d, &dint);
 	dfract = round(dfract * 10.0);
@@ -171,27 +170,8 @@ void Convert::ft_stof()
 	else
 		put_int(_i);
 
-	if (ffract > 9)
-	{
-		ffract = 0;
-		fint++;
-	}
-	if (dfract > 9)
-	{
-		dfract = 0;
-		dint++;
-	}
-	if (ffract <= 0)
-		ffract *= -1;
-	if (dfract <= 0)
-		dfract *= -1;
-
-	// -0 display
-	if (dfract == 0)
-		dfract = 0;
-	if (ffract == 0)
-		ffract = 0;
-
+	set_fract(ffract, fint);
+	set_fract(dfract, dint);
 	put_float(fint, ffract);
 	put_double(dint, dfract);
 }
@@ -223,33 +203,43 @@ void Convert::ft_stod()
 	else
 		put_int(_i);
 
-	if (dfract > 9)
-	{
-		dfract = 0;
-		dint++;
-	}
-	if (ffract > 9)
-	{
-		ffract = 0;
-		fint++;
-	}
-
-	if (dfract < 0)
-		dfract *= -1;
-	if (ffract < 0)
-		ffract *= -1;
-
-	if (dfract == 0)
-		dfract = 0;
-	if (ffract == 0)
-		ffract = 0;
-
+	set_fract(dfract, dint);
+	set_fract(ffract, fint);
 	if (_f >= FLT_MAX || _f <= -FLT_MAX)
 		put_float("impossible");
 	else
 		put_float(fint, ffract);
 	put_double(dint, dfract);
 }
+
+void Convert::set_fract(float &fract, float &intpart)
+{
+	if (fract > 9)
+	{
+		fract = 0;
+		intpart++;
+	}
+	if (fract < 0)
+		fract *= -1;
+	// -0 display
+	if (fract == 0)
+		fract = 0;
+}
+
+void Convert::set_fract(double &fract, double &intpart)
+{
+	if (fract > 9)
+	{
+		fract = 0;
+		intpart++;
+	}
+	if (fract < 0)
+		fract *= -1;
+	// -0 display
+	if (fract == 0)
+		fract = 0;
+}
+
 
 void Convert::put_char(const std::string &c)
 {
