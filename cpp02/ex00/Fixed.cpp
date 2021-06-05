@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 15:43:44 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/31 09:31:34 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/05 00:03:23 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ Fixed::~Fixed()
 Fixed& Fixed::operator=(Fixed const &src)
 {
 	std::cout << "Assignation operator called" << std::endl;
-	if (this == &src)
- 		return (*this);
 	if (this == &src)
  		return (*this);
 	this->rawbits = src.getRawBits();

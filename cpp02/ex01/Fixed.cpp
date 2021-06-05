@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 15:43:44 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/30 11:51:29 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/05 00:04:06 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,6 @@ Fixed& Fixed::operator=(Fixed const &src)
 	std::cout << "Assignation operator called" << std::endl;
 	if (this == &src)
  		return (*this);
-	if (this == &src)
- 		return (*this);
 	this->rvalue = src.getRawBits();
 	return (*this);
 }
@@ -71,8 +69,8 @@ int Fixed::toInt( void ) const
 	return (this->rvalue / (1 << this->bits));
 }
 
-std::ostream& operator<<(std::ostream &o, Fixed const &src)
+std::ostream& operator<<(std::ostream &out, Fixed const &src)
 {
-	o << src.toFloat();
-	return o;
+	out << src.toFloat();
+	return out;
 }
