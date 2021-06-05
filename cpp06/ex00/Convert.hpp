@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 12:48:47 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/05 22:39:43 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/05 23:14:31 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ class Convert
 		void put_int(const std::string &i);
 		void put_int(const int &i);
 		void put_float(const std::string &f);
-		void put_float(const float &f);
+		void put_float(const float &fint, const float &ffract);
 		void put_double(const std::string &d);
-		void put_double(const double &d);
+		void put_double(const double &dint, const double &dfract);
 
 		int get_type();
 		void ft_limits();

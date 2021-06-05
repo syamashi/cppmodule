@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 12:49:24 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/05 22:48:30 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/05 23:15:06 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,8 +103,8 @@ void Convert::ft_stoc()
 	_d = static_cast<double>(_c);
 	put_char(_c);
 	put_int(_i);
-	put_float(_f);
-	put_double(_d);
+	put_float(_f, 0);
+	put_double(_d, 0);
 }
 
 void Convert::ft_stoi()
@@ -135,21 +135,27 @@ void Convert::ft_stoi()
 	else
 		put_char(_c);
 	put_int(_i);
-	put_float(_f);
-	put_double(_d);
+	put_float(_f, 0);
+	put_double(_d, 0);
 }
 
 void Convert::ft_stof()
 {
 	std::stringstream s(_input);
 	s >> _f;
+	float fint = 0;
+	float ffract = std::modf(_f, &fint);
+	ffract = roundf(ffract * 10.0);
+	_f = fint + ffract / 10.0;
+
 	_c = static_cast<char>(_f);
 	_i = static_cast<int>(_f);
 	_d = static_cast<double>(_f);
-	float fint = 0;
-	float ffract = std::modf(_f, &fint);
-	ffract = roundf(ffract * 10.0) / 10.0;
-	_f = fint + ffract;
+
+	double dint = 0;
+	double dfract = std::modf(_d, &dint);
+	dfract = round(dfract * 10.0);
+
 	if (_f > 127 || _f < 0)
 		put_char("impossible");
 	else
@@ -158,21 +164,28 @@ void Convert::ft_stof()
 		put_int("impossible");
 	else
 		put_int(_i);
-	put_float(_f);
-	put_double(_d);
+	put_float(fint, ffract);
+	put_double(dint, dfract);
 }
 
 void Convert::ft_stod()
 {
 	std::stringstream s(_input);
 	s >> _d;
+	double dint = 0;
+	double dfract = std::modf(_d, &dint);
+	dfract = round(dfract * 10.0);
+	_d = dint + dfract / 10.0;
+
 	_c = static_cast<char>(_d);
 	_i = static_cast<int>(_d);
 	_f = static_cast<float>(_d);
-	double dint = 0;
-	double dfract = std::modf(_d, &dint);
-	dfract = round(dfract * 10.0) / 10.0;
-	_d = dint + dfract;
+
+	float fint = 0;
+	float ffract = std::modf(_f, &fint);
+	ffract = roundf(ffract * 10.0);
+	_f = fint + ffract / 10.0;
+
 	if (_d > 127 || _d < 0)
 		put_char("impossible");
 	else
@@ -181,8 +194,8 @@ void Convert::ft_stod()
 		put_int("impossible");
 	else
 		put_int(_i);
-	put_float(_f);
-	put_double(_d);
+	put_float(fint, ffract);
+	put_double(dint, dfract);
 }
 
 void Convert::put_char(const std::string &c)
@@ -213,14 +226,9 @@ void Convert::put_float(const std::string &f)
 	std::cout << "float: " << f << std::endl;
 }
 
-void Convert::put_float(const float &f)
+void Convert::put_float(const float &fint, const float &ffract)
 {
-	float fint = 0;
-	float ffract = std::modf(f, &fint);
-	if (ffract == 0.0)
-		std::cout << "float: " << f << ".0f" << std::endl;
-	else
-		std::cout << "float: " << f << 'f' << std::endl;
+	std::cout << "float: " << fint << "." << ffract << 'f' << std::endl;
 }
 
 void Convert::put_double(const std::string &d)
@@ -228,14 +236,9 @@ void Convert::put_double(const std::string &d)
 	std::cout << "double: " << d << std::endl;
 }
 
-void Convert::put_double(const double &d)
+void Convert::put_double(const double &dint, const double &dfract)
 {
-	double dint = 0;
-	double dfract = std::modf(d, &dint);
-	if (dfract == 0.0)
-		std::cout << "double: " << d << ".0" << std::endl;
-	else
-		std::cout << "double: " << d << std::endl;
+	std::cout << "double: " << dint << "." << dfract << std::endl;
 }
 
 const char *Convert::InvalidValueException::what() const throw()
