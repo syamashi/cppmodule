@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 12:49:24 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/06 01:14:57 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/06 01:36:18 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -219,6 +219,11 @@ void Convert::set_fract(float &fract, float &intpart)
 		fract = 0;
 		intpart++;
 	}
+	if (fract < -9)
+	{
+		fract = 0;
+		intpart--;
+	}
 	if (fract < 0)
 		fract *= -1;
 	// -0 display
@@ -232,6 +237,11 @@ void Convert::set_fract(double &fract, double &intpart)
 	{
 		fract = 0;
 		intpart++;
+	}
+	if (fract < -9)
+	{
+		fract = 0;
+		intpart--;
 	}
 	if (fract < 0)
 		fract *= -1;
