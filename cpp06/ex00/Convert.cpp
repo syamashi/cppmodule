@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 12:49:24 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/05 23:55:48 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/06 00:02:00 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,7 +145,7 @@ void Convert::ft_stof()
 	// if include 'f' in string, cannot get float value.
 	finput[_input.length() - 1] = '\0';
 
-	std::stringstream s(_input);
+	std::stringstream s(finput);
 	s >> _f;
 	if (_f >= FLT_MAX)
 		throw (Convert::OverflowFloatException());
