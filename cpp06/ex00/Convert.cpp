@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 12:49:24 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/05 22:41:45 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/05 22:48:30 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,12 +143,13 @@ void Convert::ft_stof()
 {
 	std::stringstream s(_input);
 	s >> _f;
-	_f = round(_f * 10.0) / 10.0;
 	_c = static_cast<char>(_f);
 	_i = static_cast<int>(_f);
 	_d = static_cast<double>(_f);
 	float fint = 0;
 	float ffract = std::modf(_f, &fint);
+	ffract = roundf(ffract * 10.0) / 10.0;
+	_f = fint + ffract;
 	if (_f > 127 || _f < 0)
 		put_char("impossible");
 	else
@@ -165,12 +166,13 @@ void Convert::ft_stod()
 {
 	std::stringstream s(_input);
 	s >> _d;
-	_d = round(_d * 10.0) / 10.0;
 	_c = static_cast<char>(_d);
 	_i = static_cast<int>(_d);
 	_f = static_cast<float>(_d);
 	double dint = 0;
 	double dfract = std::modf(_d, &dint);
+	dfract = round(dfract * 10.0) / 10.0;
+	_d = dint + dfract;
 	if (_d > 127 || _d < 0)
 		put_char("impossible");
 	else
