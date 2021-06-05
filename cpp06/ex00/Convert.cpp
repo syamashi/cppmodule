@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 12:49:24 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/06 00:19:02 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/06 00:22:24 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,7 +147,7 @@ void Convert::ft_stof()
 
 	std::stringstream s(finput);
 	s >> _f;
-	if (_f >= FLT_MAX || _f <= FLT_MIN)
+	if (_f >= FLT_MAX || _f <= -FLT_MAX)
 		throw (Convert::OverflowFloatException());
 	float fint = 0;
 	float ffract = std::modf(_f, &fint);
@@ -189,7 +189,7 @@ void Convert::ft_stod()
 {
 	std::stringstream s(_input);
 	s >> _d;
-	if (_d >= DBL_MAX || _d <= DBL_MIN)
+	if (_d >= DBL_MAX || _d <= -DBL_MAX)
 		throw (Convert::OverflowDoubleException());
 	double dint = 0;
 	double dfract = std::modf(_d, &dint);
