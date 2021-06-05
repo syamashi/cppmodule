@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 12:49:24 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/06 00:22:24 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/06 00:50:07 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Convert::Convert(Convert const &src) : _input(src._input)
     *this = src;
 }
 
-Convert::Convert(const std::string &input) : _c(0), _i(0), _f(0.0), _d(0.0), _input(input), _type(0)
+Convert::Convert(const std::string &input) : _input(input), _type(0) , _c(0), _i(0), _f(0.0), _d(0.0)
 {
 	_type = get_type();
 	if (_type <= TYPE_NAN)
@@ -149,13 +149,14 @@ void Convert::ft_stof()
 	s >> _f;
 	if (_f >= FLT_MAX || _f <= -FLT_MAX)
 		throw (Convert::OverflowFloatException());
-	float fint = 0;
-	float ffract = std::modf(_f, &fint);
-	ffract = roundf(ffract * 10.0);
 
 	_c = static_cast<char>(_f);
 	_i = static_cast<int>(_f);
 	_d = static_cast<double>(_f);
+
+	float fint = 0;
+	float ffract = std::modf(_f, &fint);
+	ffract = roundf(ffract * 10.0);
 
 	double dint = 0;
 	double dfract = std::modf(_d, &dint);
@@ -180,6 +181,16 @@ void Convert::ft_stof()
 		dfract = 0;
 		dint++;
 	}
+	if (ffract <= 0)
+		ffract *= -1;
+	if (dfract <= 0)
+		dfract *= -1;
+
+	// -0 display
+	if (dfract == 0)
+		dfract = 0;
+	if (ffract == 0)
+		ffract = 0;
 
 	put_float(fint, ffract);
 	put_double(dint, dfract);
@@ -191,14 +202,14 @@ void Convert::ft_stod()
 	s >> _d;
 	if (_d >= DBL_MAX || _d <= -DBL_MAX)
 		throw (Convert::OverflowDoubleException());
-	double dint = 0;
-	double dfract = std::modf(_d, &dint);
-	dfract = round(dfract * 10.0);
 
 	_c = static_cast<char>(_d);
 	_i = static_cast<int>(_d);
 	_f = static_cast<float>(_d);
 
+	double dint = 0;
+	double dfract = std::modf(_d, &dint);
+	dfract = round(dfract * 10.0);
 	float fint = 0;
 	float ffract = std::modf(_f, &fint);
 	ffract = roundf(ffract * 10.0);
@@ -223,7 +234,17 @@ void Convert::ft_stod()
 		fint++;
 	}
 
-	if (_f >= FLT_MAX)
+	if (dfract < 0)
+		dfract *= -1;
+	if (ffract < 0)
+		ffract *= -1;
+
+	if (dfract == 0)
+		dfract = 0;
+	if (ffract == 0)
+		ffract = 0;
+
+	if (_f >= FLT_MAX || _f <= -FLT_MAX)
 		put_float("impossible");
 	else
 		put_float(fint, ffract);
