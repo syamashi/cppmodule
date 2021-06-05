@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 12:49:24 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/06 00:17:34 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/06 00:19:02 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -189,7 +189,7 @@ void Convert::ft_stod()
 {
 	std::stringstream s(_input);
 	s >> _d;
-	if (_d >= DBL_MAX || _D <= DBL_MIN)
+	if (_d >= DBL_MAX || _d <= DBL_MIN)
 		throw (Convert::OverflowDoubleException());
 	double dint = 0;
 	double dfract = std::modf(_d, &dint);
