@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 12:48:47 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/05 21:52:02 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/05 22:39:43 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
 class Convert
 {
     private:
-		const std::string &_input;
+		const std::string _input;
 		int _type;
 		char _c;
 		int _i;

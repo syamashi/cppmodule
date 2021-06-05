@@ -6,13 +6,13 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 12:49:24 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/05 22:08:30 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/05 22:41:45 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Convert.hpp"
 
-Convert::Convert() : Convert("")
+Convert::Convert() : _input("")
 {
 }
 
@@ -24,8 +24,6 @@ Convert::Convert(Convert const &src) : _input(src._input)
 Convert::Convert(const std::string &input) : _c(0), _i(0), _f(0.0), _d(0.0), _input(input), _type(0)
 {
 	_type = get_type();
-	std::string types[] = {"INF_P 0", "INF_M 1 ", "NAN 2", "TYPE_C 3", "TYPE_I 4","TYPE_F 5","TYPE_D 6","FAIL 7"};
-	std::cout << types[_type] << std::endl;
 	if (_type <= TYPE_NAN)
 		ft_limits();
 	if (_type == TYPE_C)
