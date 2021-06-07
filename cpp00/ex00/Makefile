@@ -6,7 +6,7 @@
 #    By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/21 13:52:25 by syamashi          #+#    #+#              #
-#    Updated: 2021/06/07 08:55:27 by syamashi         ###   ########.fr        #
+#    Updated: 2021/06/07 09:44:46 by syamashi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,10 +37,16 @@ fclean: clean
 
 re: fclean all
 
-test: re
+test:
+	@make re -s
 	./$(NAME) "shhhhh... I think the students are asleep..."
 	./$(NAME) Damnit " ! " "Sorry students, I thought this thing was off."
 	./$(NAME)
 	@make fclean -s
 
-.PHONY: all fclean clean re test
+val:
+	@make re -s
+	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)
+	@make fclean -s
+
+.PHONY: all fclean clean re test val
