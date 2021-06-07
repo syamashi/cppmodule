@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 13:10:07 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/04 09:57:29 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 13:09:04 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Form
 		const std::string _target;
     public:
         Form();
-        ~Form();
+        virtual ~Form();
         Form(const Form &src);
 		Form(const std::string &name, const int &sign_grade, const int &exec_grade);
 		Form(const std::string &name, const int &sign_grade, const int &exec_grade, const std::string &target);

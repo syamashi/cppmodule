@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:37:59 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/03 17:04:25 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 12:58:05 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,8 @@ int main()
 	std::cout << "---new Bureaucrat(babyy, 151)---" << std::endl;
 	try
 	{
-		Bureaucrat *baby = new Bureaucrat("babyy", 151);
+		Bureaucrat *babyy = new Bureaucrat("babyy", 151);
+		delete babyy;
 	}
 	catch(const std::exception& ex)
 	{
@@ -79,7 +80,8 @@ int main()
 	std::cout << "---new Bureaucrat(bosss, 0)---" << std::endl;
 	try
 	{
-		Bureaucrat *baby = new Bureaucrat("bosss", 0);
+		Bureaucrat *bosss = new Bureaucrat("bosss", 0);
+		delete bosss;
 	}
 	catch(const std::exception& ex)
 	{

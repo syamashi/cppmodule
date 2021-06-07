@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:37:59 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/04 15:18:36 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 13:12:48 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int main()
 	Form* rrf;
 	Form* pf;
 	Form* sf;
-	Form* ef;
 
 	pout("someRandomIntern.makeForm(robotomy request, Bender)");
 	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
@@ -43,12 +42,18 @@ int main()
 	pout("someRandomIntern.makeForm(aaaa,aaaa)");
 	try
 	{
-		ef = someRandomIntern.makeForm("aaaa", "aaaa");
+		Form *ef = someRandomIntern.makeForm("aaaa", "aaaa");
 		std::cout << *ef << std::endl;
+		delete ef;
 	}
 	catch(const std::exception &ex)
 	{
 		std::cout << ex.what() << std::endl;
 	}
+
+	delete rrf;
+	delete pf;
+	delete sf;
+
 	return (0);
 }

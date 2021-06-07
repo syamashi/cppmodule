@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 09:26:00 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/24 10:46:10 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 13:06:48 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 class Brain
 {
 	public:
+		Brain();
 		~Brain();
 		std::string	identify();
 	private:
