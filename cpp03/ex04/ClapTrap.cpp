@@ -6,15 +6,14 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 21:37:01 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/07 10:26:01 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 10:54:43 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : ClapTrap("clap")
+ClapTrap::ClapTrap() : Name("clap")
 {
-
 }
 
 ClapTrap::ClapTrap(const std::string &name) : Name(name)
