@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 22:06:39 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/27 18:08:25 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 10:28:56 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int main()
 {
 	srand(time(NULL));
 	std::cout << "--------------------FRAG_TRAP-------------------" << std::endl;
-	FragTrap a;
 	FragTrap f("SYAMASHI");
 	f.rangedAttack("ENEMY1");
 	f.meleeAttack("ENEMY2");
@@ -36,7 +35,6 @@ int main()
 
 	std::cout << std::endl;
 	std::cout << "--------------------SCAV_TRAP-------------------" << std::endl;
-	ScavTrap b;
 	ScavTrap s("SCAMASHI");
 	std::cout << std::endl;
 	s.rangedAttack("ENEMY1");

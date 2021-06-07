@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 22:06:39 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/07 09:24:24 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 10:27:52 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int main()
 {
 	srand(time(NULL));
-	FragTrap a;
 	FragTrap f("SYAMASHI");
 	std::cout << "--------------------FRAG_TRAP-------------------" << std::endl;
 	f.rangedAttack("ENEMY1");

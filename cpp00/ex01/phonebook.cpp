@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 13:55:47 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/07 09:58:34 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 10:03:12 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 Phonebook::Phonebook() : depth(0)
 {
-	for(int i = 0; i < MAXLINE; i++)
-		for(int j = 0; j < 11; j++)
+	for (int i = 0; i < MAXLINE; i++)
+		for (int j = 0; j < 11; j++)
 			this->info[i][j] = "";
 }
 

@@ -6,15 +6,14 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 21:37:01 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/07 09:37:31 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 10:23:45 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap() : FragTrap("frag")
+FragTrap::FragTrap()
 {
-	
 }
 
 FragTrap::FragTrap(const std::string &name) : ClapTrap(name)
