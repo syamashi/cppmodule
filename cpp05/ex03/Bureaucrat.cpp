@@ -6,13 +6,13 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 13:58:53 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/03 16:51:00 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 13:26:49 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : Bureaucrat("boss", 1)
+Bureaucrat::Bureaucrat() : _name("boss"), _grade(1)
 {
 }
 
