@@ -14,7 +14,6 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm()
 : Form("ShrubberyCreationForm", 145, 137, "target")
-
 {
 }
 
