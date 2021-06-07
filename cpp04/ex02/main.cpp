@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 12:09:28 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/31 16:59:26 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 12:11:36 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int main()
 	}
 	delete vlc;
 
-	std::cout << "-----double push test-----" << std::endl;
+	std::cout << std::endl << "-----double push test-----" << std::endl;
 	ISquad *vlc2 = new Squad;
 	ISpaceMarine* ann = new TacticalMarine;
 	ISpaceMarine* bil = new AssaultTerminator;
@@ -44,6 +44,7 @@ int main()
 	vlc2->push(bil);
 	for (int i = 0; i < vlc2->getCount(); ++i)
 	{
+		std::cout << std::endl << " --- vlc2[" << i << "] --- " << std::endl;
 		ISpaceMarine* cur = vlc2->getUnit(i);
 		cur->battleCry();
 		cur->rangedAttack();

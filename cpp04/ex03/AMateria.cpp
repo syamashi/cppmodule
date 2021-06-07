@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 17:18:42 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/07 11:07:32 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 12:13:03 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ unsigned int AMateria::getXP() const //Returns the Materia's XP
 void AMateria::use(ICharacter& target)
 {
 	this->_xp += 10;
+	target.getName();
 }
 
 AMateria& AMateria::operator=(const AMateria &src)

@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 23:14:13 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/31 10:21:15 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 12:03:20 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,77 +18,96 @@
 #include "RadScorpion.hpp"
 #include "SuperMutant.hpp"
 
+void pout(std::string mes)
+{
+	std::cout << std::endl << "----- " << mes << " -----" << std::endl;
+}
+
 int main()
 {
+	pout("new Character(me)");
 	Character* me = new Character("me");
 	std::cout << *me;
-	Enemy* b = new RadScorpion();
+	pout("new RadScorpion()");
+	Enemy* radscorp = new RadScorpion();
+	std::cout << *radscorp;
+	pout("new PlasmaRifle()");
 	AWeapon* pr = new PlasmaRifle();
+	std::cout << *pr;
+	pout("new PowerFist()");
 	AWeapon* pf = new PowerFist();
+	std::cout << *pf;
+	pout("me->equip(pr)");
 	me->equip(pr);
 	std::cout << *me;
+	pout("me->equip(pf)");
 	me->equip(pf);
-	me->attack(b);
 	std::cout << *me;
-	me->equip(pr);
+	pout("me->attack(radscorp)");
+	me->attack(radscorp);
+	std::cout << *radscorp;
+	pout("me->equip(pf)");
+	me->equip(pf);
 	std::cout << *me;
-	me->attack(b);
-	std::cout << *me;
-	me->attack(b);
+	pout("me->attack(radscorp)");
+	me->attack(radscorp);
 	std::cout << *me;
 
-	std::cout << std::endl;
-	std::cout << *pr << std::endl;
-	std::cout << *pf << std::endl;
+	pout("new RadScorpion()");
 	Enemy* rad = new RadScorpion();
-	std::cout << *rad << std::endl;
+	std::cout << *rad;
+	pout("new SuperMutant()");
 	Enemy* mut = new SuperMutant();
-	std::cout << *mut << std::endl;
+	std::cout << *mut;
+	pout("me->attack(mut)");
 	me->attack(mut);
-	std::cout << *mut << std::endl;
-	std::cout << *me << std::endl;
-
+	std::cout << *mut;
+	pout("me->equip(pf)");
 	me->equip(pf);
-	std::cout << *me << std::endl;
+	std::cout << *me;
 
+	pout("me->attack(mut)");
 	me->attack(mut);
-	std::cout << *mut << std::endl;
-	std::cout << *me << std::endl;
+	std::cout << *mut;
 
+	pout("me->attack(mut)");
 	me->attack(mut);
-	std::cout << *mut << std::endl;
-	std::cout << *me << std::endl;
+	std::cout << *mut;
+	std::cout << *me;
 
+	pout("me->attack(mut)");
 	me->attack(mut);
-	std::cout << *mut << std::endl;
-	std::cout << *me << std::endl;
+	std::cout << *mut;
+	std::cout << *me;
 
+	pout("me->recoverAP()");
 	me->recoverAP();
-	std::cout << *me << std::endl;
+	std::cout << *me;
 
+	pout("me->recoverAP()");
 	me->recoverAP();
-	std::cout << *me << std::endl;
+	std::cout << *me;
 
+	pout("me->attack(mut)");
 	me->attack(mut);
-	std::cout << *mut << std::endl;
-	std::cout << *me << std::endl;
+	std::cout << *me;
 
-	me->attack(mut);
-	std::cout << *me << std::endl;
-
-//	pr = pf;
-//	std::cout << *pr << std::endl;
-	std::cout << "[pf = pr]: " << std::endl;
+	pout("pf = pr");
+	delete pf;
 	pf = pr;
-	std::cout << *pf << std::endl;
+	std::cout << *pf;
 
+	pout("new SuperMutant()");
 	Enemy *mut2 = new SuperMutant();
-	std::cout << *mut2 << std::endl;
+	std::cout << *mut2;
 
+	pout("mut2 = rad");
+	delete mut2;
 	mut2 = rad;
-	std::cout << "[mut2 = rad]: " << std::endl << *mut2 << std::endl;
+	std::cout << *mut2;
 
-	Character *syamashi = new Character();
-	std::cout << "[new Character()]: " << std::endl << *syamashi << std::endl;
+	delete me;
+	delete pr;
+	delete rad;
 	return 0;
 }

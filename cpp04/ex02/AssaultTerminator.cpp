@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 14:41:24 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/01 13:17:32 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 12:07:10 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ AssaultTerminator::~AssaultTerminator()
 
 AssaultTerminator& AssaultTerminator::operator=(const AssaultTerminator &src)
 {
+	if (this == &src)
+		return (*this);
 	return (*this);
 }
 

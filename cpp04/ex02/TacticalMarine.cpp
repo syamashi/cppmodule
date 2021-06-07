@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 14:41:06 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/31 16:08:37 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 12:07:52 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ TacticalMarine::~TacticalMarine()
 
 TacticalMarine& TacticalMarine::operator=(const TacticalMarine &src)
 {
-    return (*this);
+	if (this == &src)
+		return (*this);
+	return (*this);
 }
 
 ISpaceMarine* TacticalMarine::clone() const

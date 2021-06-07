@@ -6,13 +6,13 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 17:19:54 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/07 11:06:14 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 11:36:39 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Enemy.hpp"
 
-Enemy::Enemy() : type("type"), hp(0)
+Enemy::Enemy() : hp(0), type("type")
 {
 }
 
