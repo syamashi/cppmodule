@@ -6,13 +6,13 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 15:33:47 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/30 11:51:29 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 11:05:05 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sorcerer.hpp"
 
-Sorcerer::Sorcerer()
+Sorcerer::Sorcerer() : name("name"), title("title")
 {
     std::cout << "Default constructor called" << std::endl;
 }
@@ -28,7 +28,6 @@ Sorcerer::Sorcerer(Sorcerer const &src)
     std::cout << "Copy constructor called" << std::endl;
     *this = src;
 }
-
 
 Sorcerer::~Sorcerer()
 {

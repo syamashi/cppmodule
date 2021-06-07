@@ -6,13 +6,13 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 17:47:56 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/01 16:01:57 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 11:07:50 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-Character::Character() : Character("syamashi")
+Character::Character() : _name("name")
 {
 }
 

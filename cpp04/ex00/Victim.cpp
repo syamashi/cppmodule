@@ -12,7 +12,7 @@
 
 #include "Victim.hpp"
 
-Victim::Victim()
+Victim::Victim() : name("name")
 {
     std::cout << "Default constructor called" << std::endl;
 }

@@ -6,13 +6,13 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 17:18:42 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/01 14:43:35 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 11:07:32 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
-AMateria::AMateria() : AMateria("no name")
+AMateria::AMateria() : _type("type"), _xp(0)
 {
 }
 

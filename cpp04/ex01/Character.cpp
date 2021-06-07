@@ -6,19 +6,18 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 17:19:28 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/31 09:54:30 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 11:04:01 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-Character::Character() : Character("syamashi")
+Character::Character() : name("name"), ap(0), aweapon(NULL)
 {
 }
 
 Character::Character(std::string const & name) : name(name), ap(40), aweapon(NULL)
 {
-
 }
 
 Character::Character(Character const &src)

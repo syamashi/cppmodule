@@ -6,17 +6,14 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 17:19:08 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/31 10:32:30 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 11:05:47 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AWeapon.hpp"
 
-AWeapon::AWeapon()
+AWeapon::AWeapon() : name("fist"), apcost(0), damage(0)
 {
-	this->name = "fist";
-	this->apcost = 0;
-	this->damage = 0;
 }
 
 AWeapon::AWeapon(AWeapon const &src)
@@ -24,11 +21,8 @@ AWeapon::AWeapon(AWeapon const &src)
     *this = src;
 }
 
-AWeapon::AWeapon(std::string const & name, int apcost, int damage)
+AWeapon::AWeapon(std::string const & name, int apcost, int damage) : name(name), apcost(apcost), damage(damage)
 {
-	this->name = name;
-	this->apcost = apcost;
-	this->damage = damage;
 }
 
 AWeapon::~AWeapon()

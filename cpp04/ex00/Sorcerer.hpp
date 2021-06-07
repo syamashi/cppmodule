@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 15:31:39 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/29 17:13:10 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 11:02:08 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Sorcerer
 		std::string get_title() const;
 
 		void polymorph(Victim const &vct) const;
-		Sorcerer& Sorcerer::operator=(const Sorcerer &src);
+		Sorcerer& operator=(const Sorcerer &src);
 	private:
 		std::string name;
 		std::string title;

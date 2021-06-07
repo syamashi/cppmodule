@@ -6,22 +6,18 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 17:19:54 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/31 09:54:20 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 11:06:14 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Enemy.hpp"
 
-Enemy::Enemy()
+Enemy::Enemy() : type("type"), hp(0)
 {
-	this->type = "";
-	this->hp = 0;
 }
 
-Enemy::Enemy(int hp, std::string const & type)
+Enemy::Enemy(int hp, std::string const & type) : hp(hp), type(type)
 {
-	this->hp = hp;
-	this->type = type;
 }
 
 Enemy::Enemy(Enemy const &src)
