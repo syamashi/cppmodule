@@ -6,7 +6,7 @@
 #    By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/21 13:52:25 by syamashi          #+#    #+#              #
-#    Updated: 2021/06/07 17:23:41 by syamashi         ###   ########.fr        #
+#    Updated: 2021/06/07 17:27:34 by syamashi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,6 +54,10 @@ test:
 
 val:
 	@make re -s
+	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)
+	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)
+	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)
+	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)
 	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)
 	@make fclean -s
 

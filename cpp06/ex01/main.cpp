@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 15:17:58 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/07 16:43:09 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 17:43:25 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int main()
 		std::cout << dat->s1 << " " << dat->n << " " << dat->s2 << std::endl;
 		delete dat;
 		delete reinterpret_cast<char*>(raw);
+		// delete *void is undefined command...
 	}
 	catch(const std::exception& e)
 	{
