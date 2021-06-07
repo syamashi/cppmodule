@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 08:03:35 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/04 10:15:34 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 13:33:14 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <time.h>
+#include <random>
 #include "Form.hpp"
 
 class RobotomyRequestForm : public Form
