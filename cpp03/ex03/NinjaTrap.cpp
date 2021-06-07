@@ -6,13 +6,13 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 21:37:01 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/29 10:59:39 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 09:35:02 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "NinjaTrap.hpp"
 
-NinjaTrap::NinjaTrap() : NinjaTrap("dorian")
+NinjaTrap::NinjaTrap() : NinjaTrap("ninja")
 {
 
 }

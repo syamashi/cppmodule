@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 09:48:12 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/24 19:26:10 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 08:57:37 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void memoryLeak()
 		std::cout << *panther << std::endl;
 		delete panther;
 	}
-	catch(std::bad_alloc){
+	catch(std::bad_alloc)
+	{
 		std::cout << "bad_alloc" << std::endl;
-		std::exit(1);
 	}
 }
 

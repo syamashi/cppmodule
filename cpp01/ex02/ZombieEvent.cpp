@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 11:55:09 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/22 17:29:28 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 09:05:11 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ Zombie*	ZombieEvent::newZombie(std:: string name)
 	catch(std::bad_alloc)
 	{
 		std::cout << "bad_alloc" << std::endl;
-		std::exit(1);
 	}
 	return ret;
 };

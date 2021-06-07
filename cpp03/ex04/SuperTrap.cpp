@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 14:58:45 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/29 10:59:39 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 09:38:03 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ void SuperTrap::debug()
 	std::cout << "Armor_damage_reduction: " << this->Armor_damage_reduction << std::endl;
 }
 
-SuperTrap::SuperTrap() : SuperTrap("egg")
+SuperTrap::SuperTrap() : SuperTrap("super")
 {
-	
+
 }
 
-SuperTrap::SuperTrap(const std::string &name) : ClapTrap(name), NinjaTrap(name), FragTrap(name)
+SuperTrap::SuperTrap(const std::string &name) : ClapTrap(name), FragTrap(name), NinjaTrap(name)
 {
 	std::cout << "[i]SuperTrap " << name << " appear." << std::endl;
 	this->Hit_points = 100;

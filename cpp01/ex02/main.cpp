@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 10:11:12 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/22 17:29:28 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 09:05:40 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 std::string	get_level(int lv)
 {
 	std::string	level;
-
-	char	c;
+	char c;
 
 	for (; lv > 0; lv /= 10)
 	{
@@ -31,29 +30,13 @@ std::string	get_level(int lv)
 
 void	randomChump()
 {
-	std::string names[] = {
-		"syamashi",
-		"kyamashi",
-		"tyamashi",
-		"ryamashi",
-		"pyamashi",
-		"nyamashi",
-		"myamashi",
-		"xyamashi"};
-	std::string types[] = {
-		"zako",
-		"tuyo",
-		"oni",
-		"gomi"
-	};
-	int	namesize;
-	int typesize;
-	int	seed;
+	std::string names[] = {"syam", "kyam", "tyam", "ryam", "pyam", "nyam", "myam", "xyam"};
+	std::string types[] = {"zako", "tuyo", "oni", "gomi"};
+	int	namesize = 8;
+	int typesize = 4;
+	int	seed = rand();
 	std::string	t;
 
-	namesize = 8;
-	typesize = 4;
-	seed = rand();
 	t += get_level(seed % 100);
 	t += types[seed % typesize];
 	try
@@ -65,7 +48,6 @@ void	randomChump()
 	catch(std::bad_alloc)
 	{
 		std::cout << "bad_alloc" << std::endl;
-		std::exit(1);
 	}
 }
 
@@ -82,9 +64,9 @@ int main()
 		z_heap->announce();
 		delete z_heap;
 	}
-	catch(std::bad_alloc){
+	catch(std::bad_alloc)
+	{
 		std::cout << "bad_alloc" << std::endl;
-		std::exit(1);
 	}
 
 	ZombieEvent ze;

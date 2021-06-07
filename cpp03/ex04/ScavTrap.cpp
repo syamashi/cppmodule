@@ -6,13 +6,13 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 21:37:01 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/29 10:59:39 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 09:35:16 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() : ScavTrap("banana")
+ScavTrap::ScavTrap() : ScavTrap("scav")
 {
 
 }

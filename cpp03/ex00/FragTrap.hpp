@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 21:22:09 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/29 00:00:19 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 09:37:15 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,15 @@ class FragTrap
 
 		FragTrap& operator=(FragTrap const &src);
 	private:
-		int Hit_points;
-		int Max_hit_points;
-		int Energy_points;
-		int Max_energy_points;
-		int Level;
+		unsigned int Hit_points;
+		unsigned int Max_hit_points;
+		unsigned int Energy_points;
+		unsigned int Max_energy_points;
+		unsigned int Level;
 		const std::string Name;
-		int Melee_attack_damage;
-		int Ranged_attack_damage;
-		int Armor_damage_reduction;
+		unsigned int Melee_attack_damage;
+		unsigned int Ranged_attack_damage;
+		unsigned int Armor_damage_reduction;
 };
 
 std::ostream& operator<<(std::ostream& out, FragTrap const & src);

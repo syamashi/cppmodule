@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 11:07:56 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/24 19:25:21 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 09:11:23 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class HumanA
 		HumanA(std::string name, Weapon& rwp);
 		void	attack();
 	private:
-		Weapon&	rwp;
 		std::string	name;
+		Weapon&	rwp;
 };
 
 #endif

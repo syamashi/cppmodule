@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 11:55:09 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/03 13:34:42 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 09:08:24 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,28 +30,13 @@ std::string	get_level(int lv)
 
 ZombieHorde::ZombieHorde(int N)
 {
-	std::string names[] = {
-		"syamashi",
-		"kyamashi",
-		"tyamashi",
-		"ryamashi",
-		"pyamashi",
-		"nyamashi",
-		"myamashi",
-		"xyamashi"};
-	std::string types[] = {
-		"zako",
-		"tuyo",
-		"oni",
-		"gomi"
-	};
-	int	namesize;
-	int typesize;
+	std::string names[] = {"syam", "kyam", "tyam", "ryam", "pyam", "nyam", "myam", "xyam"};
+	std::string types[] = {"zako", "tuyo", "oni", "gomi"};
+	int	namesize = 8;
+	int typesize = 4;
 	int	seed;
 
 	this->N = N;
-	namesize = 8;
-	typesize = 4;
 	try
 	{
 		this->Zs = new Zombie[N];
@@ -68,7 +53,6 @@ ZombieHorde::ZombieHorde(int N)
 	catch(std::bad_alloc)
 	{
 		std::cout << "bad_alloc" << std::endl;
-		std::exit(1);
 	}
 }
 

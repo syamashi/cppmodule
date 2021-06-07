@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 22:12:27 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/22 17:29:31 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 08:49:24 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ void ponyOnTheHeap()
 	{
 		heap = new Pony("I'M HEAP PONY!");
 	}
-	catch(std::bad_alloc){
+	catch(std::bad_alloc)
+	{
 		std::cout << "bad_alloc" << std::endl;
-		std::exit(1);
 	}
 	heap->ponyout();
 	delete heap;

@@ -6,19 +6,14 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 13:55:47 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/21 17:37:03 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 08:38:40 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 
-/*
-** constracter
-*/
-
-Phonebook::Phonebook()
+Phonebook::Phonebook() : depth(0)
 {
-	depth = 0;
 }
 
 void Phonebook::addcmd()
