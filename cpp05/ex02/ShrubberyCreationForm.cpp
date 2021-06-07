@@ -13,7 +13,8 @@
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm()
-: ShrubberyCreationForm("target")
+: Form("ShrubberyCreationForm", 145, 137, "target")
+
 {
 }
 

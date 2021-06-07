@@ -13,7 +13,7 @@
 #include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm()
-: RobotomyRequestForm("target")
+: Form("RobotomyRequestForm", 72, 45, "target")
 {
 }
 

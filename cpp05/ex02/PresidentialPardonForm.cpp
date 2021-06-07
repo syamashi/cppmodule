@@ -6,14 +6,15 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 08:01:16 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/04 12:06:56 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 13:37:15 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm()
-: PresidentialPardonForm("target")
+: Form("PresidentialPardonForm", 25, 5, "target")
+
 {
 }
 
