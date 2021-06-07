@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 13:55:43 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/21 17:36:26 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 09:55:26 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,19 +43,6 @@ class Phonebook
 		};
 		int	depth;
 		std::string	info[MAXLINE][11];
-		std::string heads[11] = {
-			"first_name",
-			"last_name",
-			"nickname",
-			"login",
-			"postal_address",
-			"email_address",
-			"phone_number",
-			"birthday_date",
-			"favorite_meal",
-			"underwear_color",
-			"darkest_secret"
-			};
 };
 
 #endif
