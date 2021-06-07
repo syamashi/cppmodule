@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:37:59 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/07 13:12:48 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 15:44:06 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 void pout(const std::string &mes)
 {
-	std::cout << "--- " << mes << " ---" << std::endl;
+	std::cout << " ------ " << mes << " ------ " << std::endl;
 }
 
 int main()
