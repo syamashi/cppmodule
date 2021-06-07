@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 22:06:39 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/07 10:29:35 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 10:43:39 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main()
 	f.rangedAttack("ENEMY1");
 	f.meleeAttack("ENEMY2");
 	std::cout << std::endl;
-	int nums[] = {50, 40, 30, 20, 11, 10, 9};
+	unsigned int nums[] = {50, 40, 30, 20, 11, 10, 9};
 	for (auto v: nums)
 		f.takeDamage(v);
 	std::cout << std::endl;

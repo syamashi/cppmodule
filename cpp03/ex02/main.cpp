@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 22:06:39 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/07 10:28:54 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/07 10:43:21 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ int main()
 	f.rangedAttack("ENEMY1");
 	f.meleeAttack("ENEMY2");
 	std::cout << std::endl;
-	int nums[] = {50, 40, 30, 20, 11, 10, 9};
-	for (auto v: nums)
+	unsigned int nums[] = {50, 40, 30, 20, 11, 10, 9};
+	for (unsigned int v: nums)
 		f.takeDamage(v);
 	std::cout << std::endl;
-	for (auto v: nums)
+	for (unsigned int v: nums)
 		f.beRepaired(v);
 	std::cout << std::endl;
 	for (int i=0; i<7; i++)
@@ -41,10 +41,10 @@ int main()
 	s.rangedAttack("ENEMY1");
 	s.meleeAttack("ENEMY2");
 	std::cout << std::endl;
-	for (auto v: nums)
+	for (unsigned int v: nums)
 		s.takeDamage(v);
 	std::cout << std::endl;
-	for (auto v: nums)
+	for (unsigned int v: nums)
 		s.beRepaired(v);
 	std::cout << std::endl;
 	for (int i=0; i<7; i++)
