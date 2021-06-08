@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 09:25:36 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/24 10:46:13 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/08 18:31:09 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@
 
 class Human
 {
+	private:
+		const Brain *br;
 	public:
 		Human();
 		~Human();
-		std::string identify();
-		Brain&	getBrain();
-	private:
-		Brain*	br;
+		std::string identify() const;
+		const Brain&	getBrain() const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 10:09:47 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/24 10:47:52 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/08 18:30:58 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ Human::~Human()
 	delete this->br;
 }
 
-std::string Human::identify()
+std::string Human::identify() const
 {
 	return (this->br->identify());
 }
 
-Brain& Human::getBrain()
+const Brain& Human::getBrain() const
 {
 	return (*this->br);
 }

@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 12:11:32 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/08 15:47:39 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/08 16:53:17 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ Contact& Contact::operator=(const Contact &src)
 {
     if (this == &src)
         return (*this);
+	for (int i = 0; i < 11; i++)
+		this->info[i] = src.info[i];
     return (*this);
 }
 

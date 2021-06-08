@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 09:45:42 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/07 18:16:38 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/08 18:29:32 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ Brain::~Brain()
 	std::cout << "[~Brain] died" << std::endl;
 }
 
-std::string Brain::identify()
+std::string Brain::identify() const
 {
 	std::stringstream	sst;
 	sst << this;
-	
+
 	std::string ret = sst.str();
 	int ret_len = ret.length();
 	for(int i = 2; i < ret_len; i++)
