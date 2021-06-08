@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/21 13:55:43 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/08 15:46:20 by syamashi         ###   ########.fr       */
+/*   Created: 2021/06/08 08:45:57 by syamashi          #+#    #+#             */
+/*   Updated: 2021/06/08 09:12:45 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
-
-# define PHONEBOOK "phonebook > "
-# define MAXLINE 8
+#ifndef ITER_HPP
+#define ITER_HPP
 
 # include <iostream>
-# include <iomanip>
-# include <string>
-# include "Contact.hpp"
 
-class Phonebook
+template<typename T>
+void iter(T *arr, int arr_len, void(func)(const T &))
 {
-	private:
-		int	_depth;
-		Contact	_contact[MAXLINE];
-	public:
-		Phonebook();
-		void	addcmd();
-		void	searchcmd();
-		void	exitcmd();
-};
+	for (int i = 0; i < arr_len; i++)
+		func(arr[i]);
+}
 
 #endif

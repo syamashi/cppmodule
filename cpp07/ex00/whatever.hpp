@@ -1,36 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/21 13:55:43 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/08 15:46:20 by syamashi         ###   ########.fr       */
+/*   Created: 2021/06/07 20:01:32 by syamashi          #+#    #+#             */
+/*   Updated: 2021/06/07 21:01:49 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include <iostream>
 
-# define PHONEBOOK "phonebook > "
-# define MAXLINE 8
+#ifndef WHATEVER_HPP
+#define WHATEVER_HPP
 
-# include <iostream>
-# include <iomanip>
-# include <string>
-# include "Contact.hpp"
+#include <iostream>
 
-class Phonebook
+template <typename T>
+void swap(T &a, T &b)
 {
-	private:
-		int	_depth;
-		Contact	_contact[MAXLINE];
-	public:
-		Phonebook();
-		void	addcmd();
-		void	searchcmd();
-		void	exitcmd();
-};
+	T tmp = a;
+	a = b;
+	b = tmp;
+}
+
+template <typename T>
+T const &max(T const &a, T const &b)
+{
+	if (a > b)
+		return (a);
+	else
+		return (b);
+}
+
+template <typename T>
+T const min(T const &a, T const &b)
+{
+	if (a > b)
+		return (b);
+	else
+		return (a);
+}
 
 #endif

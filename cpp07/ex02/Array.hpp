@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/21 13:55:43 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/08 15:46:20 by syamashi         ###   ########.fr       */
+/*   Created: 2021/06/08 09:42:41 by syamashi          #+#    #+#             */
+/*   Updated: 2021/06/08 09:59:27 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef ARRAY_HPP
+#define ARRAY_HPP
 
-# define PHONEBOOK "phonebook > "
-# define MAXLINE 8
-
-# include <iostream>
-# include <iomanip>
-# include <string>
-# include "Contact.hpp"
-
-class Phonebook
+#include <iostream>
+template<class T>
+class Array
 {
-	private:
-		int	_depth;
-		Contact	_contact[MAXLINE];
-	public:
-		Phonebook();
-		void	addcmd();
-		void	searchcmd();
-		void	exitcmd();
+    private:
+		T* data;
+		int size;
+    public:
+        Array();
+        ~Array();
+        Array(const Array &src);
+        Array& operator = (const Array &src);
 };
 
 #endif

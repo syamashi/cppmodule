@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/21 13:55:43 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/08 15:46:20 by syamashi         ###   ########.fr       */
+/*   Created: 2021/06/08 12:09:22 by syamashi          #+#    #+#             */
+/*   Updated: 2021/06/08 15:14:36 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
 
-# define PHONEBOOK "phonebook > "
-# define MAXLINE 8
+#include <iostream>
+#include <iomanip>
+#include <string>
 
-# include <iostream>
-# include <iomanip>
-# include <string>
-# include "Contact.hpp"
-
-class Phonebook
+class Contact
 {
-	private:
-		int	_depth;
-		Contact	_contact[MAXLINE];
+    private:
+		std::string info[11];
 	public:
-		Phonebook();
-		void	addcmd();
-		void	searchcmd();
-		void	exitcmd();
+        Contact();
+        ~Contact();
+        Contact(const Contact &src);
+        Contact& operator = (const Contact &src);
+
+		void set_info(int &column, std::string &input);
+		void get_info_top(int &index) const;
+		void get_info_index() const;
 };
 
 #endif

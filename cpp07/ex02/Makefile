@@ -6,11 +6,11 @@
 #    By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/21 13:52:25 by syamashi          #+#    #+#              #
-#    Updated: 2021/06/08 15:43:21 by syamashi         ###   ########.fr        #
+#    Updated: 2021/06/07 13:34:42 by syamashi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = a.out
 SRCS = $(shell echo *.cpp)
 OBJDIR = ./obj/
 OBJS = $(SRCS:%.cpp=$(OBJDIR)%.o)

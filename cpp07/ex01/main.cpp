@@ -5,29 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/21 17:37:09 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/08 16:40:40 by syamashi         ###   ########.fr       */
+/*   Created: 2021/06/08 08:55:23 by syamashi          #+#    #+#             */
+/*   Updated: 2021/06/08 09:12:54 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "iter.hpp"
+
+template<typename T>
+void arr_out(const T &a)
+{
+	std::cout << a << " ";
+}
+
+template<typename T>
+void pout(const T &a)
+{
+	std::cout << std::endl << " -------- " << a << " -------- " << std::endl;
+}
 
 int main()
 {
-	Phonebook	pb;
-	std::string	cmd;
-	while (1)
-	{
-		std::cout << PHONEBOOK;
-		std::getline(std::cin, cmd);
-		if (cmd == "ADD")
-			pb.addcmd();
-		else if (cmd == "SEARCH")
-			pb.searchcmd();
-		else if (cmd == "EXIT")
-			pb.exitcmd();
-		else
-			std::cout << "[USAGE] ADD / SEARCH / EXIT" << std::endl;
-	}
-	return (0);
+	pout("ints[] = {0, 1, 2, 3, 4}");
+	int ints[] = {0, 1, 2, 3, 4};
+	::iter(ints, 5, arr_out);
+
+	pout("chars[] = {'a', 'b', 'c', 'd', 'e'}");
+	char chars[] = {'a', 'b', 'c', 'd', 'e'};
+	::iter(chars, 5, arr_out);
+
+	pout("strs[] = {I, like, sushi, sushisushi}");
+	std::string strs[] = {"I", "like", "sushi", "sushisushi"};
+	::iter(strs, 4, arr_out);
 }
