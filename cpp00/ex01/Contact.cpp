@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 12:11:32 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/08 16:53:17 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/08 18:39:04 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,9 @@ void Contact::get_info_top(int &index) const
 			std::cout << std::setfill(' ') << std::setw(10) << this->info[i];
 		else
 		{
-			std::cout << this->info[i].substr(0, 9) << ".";
+			for (int j = 0; j < 9; ++j)
+				std::cout << this->info[i][j];
+			std::cout << ".";
 		}
 	}
 	std::cout << "|" << std::endl;

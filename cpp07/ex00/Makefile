@@ -6,16 +6,16 @@
 #    By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/21 13:52:25 by syamashi          #+#    #+#              #
-#    Updated: 2021/06/07 20:01:29 by syamashi         ###   ########.fr        #
+#    Updated: 2021/06/09 08:54:08 by syamashi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = a.out
-SRCS = $(shell echo *.cpp)
+SRCS = $(shell echo *.cpp)a
 OBJDIR = ./obj/
 OBJS = $(SRCS:%.cpp=$(OBJDIR)%.o)
 
-CC = clang++
+CC = clang++ -g -O0
 CFLAGS = -Wall -Werror -Wextra
 
 all: $(OBJDIR) $(NAME)

@@ -6,7 +6,7 @@
 #    By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/21 13:52:25 by syamashi          #+#    #+#              #
-#    Updated: 2021/06/07 13:34:52 by syamashi         ###   ########.fr        #
+#    Updated: 2021/06/09 08:54:08 by syamashi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ SRCS = $(shell echo *.cpp)
 OBJDIR = ./obj/
 OBJS = $(SRCS:%.cpp=$(OBJDIR)%.o)
 
-CC = clang++
+CC = clang++ -g -O0
 CFLAGS = -Wall -Werror -Wextra
 
 all: $(OBJDIR) $(NAME)

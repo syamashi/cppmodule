@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 09:42:41 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/08 09:59:27 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/09 09:40:29 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,77 @@ template<class T>
 class Array
 {
     private:
-		T* data;
-		int size;
+		T* _arr;
+		int _size;
     public:
         Array();
         ~Array();
-        Array(const Array &src);
-        Array& operator = (const Array &src);
+        Array(const Array<T> &src);
+        Array(unsigned int n);
+
+		int size() const;
+
+        Array& operator=(const Array<T> &src);
+		T& operator[](int index);
+	class OutOfArrayException : public std::exception
+	{
+		public:
+			virtual const char* what() const throw();
+	};
 };
+
+template<typename T>
+Array<T>::Array() : _arr(NULL), _size(0){}
+
+template<typename T>
+Array<T>::~Array()
+{
+	delete [] _arr;
+}
+
+template<typename T>
+Array<T>::Array(unsigned int n) : _size(n)
+{
+	this->_arr = new T[n];
+}
+
+template<typename T>
+Array<T>::Array(const Array<T> &src)
+{
+	this->_arr = new T[src._size];
+	for (int i = 0; i < src._size; ++i)
+		this->_arr[i] = src._arr[i];
+	this->_size = src._size;
+}
+
+template<typename T>
+int Array<T>::size() const
+{
+	return (this->_size);
+}
+
+template<typename T>
+Array<T>& Array<T>::operator=(const Array<T> &src)
+{
+	delete [] this->_arr;
+	this->_arr = new T[src._size];
+	for (int i = 0; i < src._size; ++i)
+		this->_arr[i] = src._arr[i];
+	this->_size = src._size;
+}
+
+template<typename T>
+T& Array<T>::operator[](int index)
+{
+	if (index >= this->_size || index < 0)
+		throw OutOfArrayException();
+	return (this->_arr[index]);
+}
+
+template<typename T>
+const char *Array<T>::OutOfArrayException::what() const throw()
+{
+	return ("out of array");
+}
 
 #endif
