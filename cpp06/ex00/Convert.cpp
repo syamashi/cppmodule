@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 12:49:24 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/06 09:13:25 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/09 14:53:05 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,20 +67,20 @@ int Convert::get_type()
 
 	int id = 0;
 	if (_input[id] == '+' || _input[id] == '-')
-		id++;
+		++id;
 	while (isdigit(_input[id]))
-		id++;
+		++id;
 	if (id == input_len)
 		return (TYPE_I);
 
 	if (_input[id] != '.' || !isdigit(_input[++id]))
 		throw (Convert::InvalidValueException());
 	while (isdigit(_input[id]))
-		id++;
+		++id;
 	if (id == input_len)
 		return (TYPE_D);
 	if (_input[id] == 'f')
-		id++;
+		++id;
 	if (id == input_len)
 		return (TYPE_F);
 	throw (Convert::InvalidValueException());
@@ -124,7 +124,7 @@ void Convert::ft_stoi()
 		_i = _i * 10 + num * sign;
 		if ((_i < 0 && sign > 0) || (_i > 0 && sign < 0))
 			throw (Convert::OverflowIntException());
-		id++;
+		++id;
 	}
 
 	_c = static_cast<char>(_i);
