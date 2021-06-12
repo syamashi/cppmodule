@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 09:42:41 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/09 09:40:29 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/13 08:48:22 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ class Array
 		int size() const;
 
         Array& operator=(const Array<T> &src);
-		T& operator[](int index);
+		const T& operator[](const int index) const; // read
+		T& operator[](const int index); // write
 	class OutOfArrayException : public std::exception
 	{
 		public:
@@ -78,7 +79,15 @@ Array<T>& Array<T>::operator=(const Array<T> &src)
 }
 
 template<typename T>
-T& Array<T>::operator[](int index)
+const T& Array<T>::operator[](const int index) const // read[]
+{
+	if (index >= this->_size || index < 0)
+		throw OutOfArrayException();
+	return (this->_arr[index]);
+}
+
+template<typename T>
+T& Array<T>::operator[](const int index) // write[]
 {
 	if (index >= this->_size || index < 0)
 		throw OutOfArrayException();

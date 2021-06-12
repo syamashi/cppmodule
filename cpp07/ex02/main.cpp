@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 09:59:04 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/09 09:39:44 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/13 08:46:29 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int main()
 			ints[i] = i + 10;
 			std::cout << "ints[" << i << "]:" << ints[i] << std::endl;
 		}
-
+		std::cout << "ints.size(): " << ints.size() << std::endl;
 
 		pout("Array<int> copy(3)");
 		Array<int> copy(ints);
@@ -69,8 +69,7 @@ int main()
 			ints[i] = i + 10;
 			std::cout << "copy[" << i << "]:" << copy[i] << std::endl;
 		}
-		pout("copy.size()");
-		std::cout << copy.size() << std::endl;
+		std::cout << "copy.size(): " << copy.size() << std::endl;
 
 		pout("Array<int> equal(3)");
 		Array<int> equal = copy;
@@ -79,8 +78,17 @@ int main()
 			ints[i] = i + 10;
 			std::cout << "equal[" << i << "]:" << equal[i] << std::endl;
 		}
-		pout("equal.size()");
-		std::cout << equal.size() << std::endl;
+		std::cout << "equal.size(): " << equal.size() << std::endl;
+
+		pout("equal[1] = [0], [2] = [0]");
+		for (int i = 1; i < 3; ++i)
+			equal[i] = equal[0];
+		for (int i = 0; i < 3; ++i)
+		{
+			ints[i] = i + 10;
+			std::cout << "equal[" << i << "]:" << equal[i] << std::endl;
+		}
+		std::cout << "equal.size(): " << equal.size() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
