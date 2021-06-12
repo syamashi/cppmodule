@@ -16,7 +16,7 @@ OBJDIR = ./obj/
 OBJS = $(SRCS:%.cpp=$(OBJDIR)%.o)
 
 CC = clang++ -g -O0
-CFLAGS =
+CFLAGS = -Wall -Werror -Wextra
 
 all: $(OBJDIR) $(NAME)
 
