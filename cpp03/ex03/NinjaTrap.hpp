@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 21:22:09 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/29 00:12:24 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/18 12:57:19 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,10 @@ class NinjaTrap : public ClapTrap
 		NinjaTrap(const NinjaTrap &src);
 		~NinjaTrap();
 
+		void ninjaShoebox(ClapTrap &crap);
 		void ninjaShoebox(ScavTrap &scav);
 		void ninjaShoebox(FragTrap &flag);
 		void ninjaShoebox(NinjaTrap &ninja);
-		void rangedAttack(std::string const & target);
-		void meleeAttack(std::string const & target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
 
 		NinjaTrap& operator=(const NinjaTrap &src);
 	private:

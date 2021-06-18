@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 22:06:39 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/07 10:52:21 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/18 13:16:23 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int main()
 	s.meleeAttack("ENEMY2");
 	std::cout << std::endl;
 	for (int i = 0; i < numsize; i++)
-			s.takeDamage(nums[i]);
+		s.takeDamage(nums[i]);
 	std::cout << std::endl;
 	for (int i = 0; i < numsize; i++)
 		s.beRepaired(nums[i]);
@@ -84,6 +84,7 @@ int main()
 	sp.ninjaShoebox(f);
 	sp.ninjaShoebox(s);
 	sp.ninjaShoebox(n);
+	sp.vaulthunter_dot_exe("ENEMY3");
 	std::cout << std::endl;
 	std::cout << sp << std::endl;
 

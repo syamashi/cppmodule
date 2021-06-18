@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 21:22:09 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/07 09:28:19 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/18 12:30:59 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,11 @@ class ClapTrap
 		ClapTrap(const ClapTrap &src);
 		~ClapTrap();
 		std::string get_Name() const;
+
+		void rangedAttack(std::string const & target);
+		void meleeAttack(std::string const & target);
+		void takeDamage(unsigned int amount);
+		void beRepaired(unsigned int amount);
 
 		ClapTrap& operator=(const ClapTrap &src);
 	private:

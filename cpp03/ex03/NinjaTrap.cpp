@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 21:37:01 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/07 10:25:40 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/18 12:57:40 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,45 +40,28 @@ NinjaTrap::~NinjaTrap()
 	std::cout << "[i]NinjaTrap " << this->Name << " broke." << std::endl;
 }
 
-void NinjaTrap::rangedAttack(std::string const & target)
+void NinjaTrap::ninjaShoebox(ClapTrap &crap)
 {
-	std::cout << "N1NJ-TP " << this->Name << " attacks " << target << " at range, causing " << this->Ranged_attack_damage << " points of damage!" << std::endl;
-}
-
-void NinjaTrap::meleeAttack(std::string const & target)
-{
-	std::cout << "N1NJ-TP " << this->Name << " attacks " << target << " at melee, causing " << this->Melee_attack_damage << " points of damage!" << std::endl;
-}
-
-void NinjaTrap::takeDamage(unsigned int amount)
-{
-	if (amount > this->Armor_damage_reduction)
-		amount -= this->Armor_damage_reduction;
-	else
-		amount = 0;
-	if (this->Hit_points > amount)
-		this->Hit_points -= amount;
-	else
+	if (this->Energy_points < 25)
 	{
-		amount = this->Hit_points;
-		this->Hit_points = 0;
+		std::cout << this->Name << " tried to attck " << crap.get_Name() << ". but not enough EP!!"
+		 " ([EP] " << this->Energy_points << " / " << this->Max_energy_points << ")" << std::endl;
+		return ;
 	}
-	std::cout << "N1NJ-TP " << this->Name << " received " << amount << " HP damage!!"
-	<< " ([HP] " << this->Hit_points << " / " << this->Max_hit_points << ")" << std::endl;
+	this->Energy_points -= 25;
+	const std::string ninjas[] = {
+		"katon",
+		"suiton",
+		"doton",
+		"kumogakure",
+		"shuriken"
+	};
+	int skillsize = 5;
+	std::cout << "N1NJ-TP " << this->Name << " attacks " << crap.get_Name() << " \"" << ninjas[rand() % skillsize] << "!!\" causing " << this->Melee_attack_damage << " points of damage!"
+	 << " ([EP] " << this->Energy_points << " / " << this->Max_energy_points << ")" << std::endl;
+	crap.takeDamage(this->Melee_attack_damage);
 }
 
-void NinjaTrap::beRepaired(unsigned int amount)
-{
-	if (this->Hit_points + amount < this->Max_hit_points)
-		this->Hit_points += amount;
-	else
-	{
-		amount = this->Max_hit_points - this->Hit_points;
-		this->Hit_points = this->Max_hit_points;
-	}
-	std::cout << "N1NJ-TP " << this->Name << " repaired " << amount << " HP!!"
-	<< " ([HP] " << this->Hit_points << " / " << this->Max_hit_points << ")" << std::endl;
-}
 
 void NinjaTrap::ninjaShoebox(ScavTrap &scav)
 {

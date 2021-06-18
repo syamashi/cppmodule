@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 21:37:01 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/07 10:23:45 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/18 12:31:32 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,46 +40,6 @@ FragTrap::~FragTrap()
 	std::cout << "[i]FragTrap " << this->Name << " broke." << std::endl;
 }
 
-void FragTrap::rangedAttack(std::string const & target)
-{
-	std::cout << "FR4G-TP " << this->Name << " attacks " << target << " at range, causing " << this->Ranged_attack_damage << " points of damage!" << std::endl;
-}
-
-void FragTrap::meleeAttack(std::string const & target)
-{
-	std::cout << "FR4G-TP " << this->Name << " attacks " << target << " at melee, causing " << this->Melee_attack_damage << " points of damage!" << std::endl;
-}
-
-void FragTrap::takeDamage(unsigned int amount)
-{
-	if (amount > this->Armor_damage_reduction)
-		amount -= this->Armor_damage_reduction;
-	else
-		amount = 0;
-	if (this->Hit_points > amount)
-		this->Hit_points -= amount;
-	else
-	{
-		amount = this->Hit_points;
-		this->Hit_points = 0;
-	}
-	std::cout << "FR4G-TP " << this->Name << " received " << amount << " HP damage!!"
-	<< " ([HP] " << this->Hit_points << " / " << this->Max_hit_points << ")" << std::endl;
-}
-
-void FragTrap::beRepaired(unsigned int amount)
-{
-	if (this->Hit_points + amount < this->Max_hit_points)
-		this->Hit_points += amount;
-	else
-	{
-		amount = this->Max_hit_points - this->Hit_points;
-		this->Hit_points = this->Max_hit_points;
-	}
-	std::cout << "FR4G-TP " << this->Name << " repaired " << amount << " HP!!"
-	<< " ([HP] " << this->Hit_points << " / " << this->Max_hit_points << ")" << std::endl;
-}
-
 void FragTrap::vaulthunter_dot_exe(std::string const & target)
 {
 	const std::string skills[] = {
@@ -89,17 +49,18 @@ void FragTrap::vaulthunter_dot_exe(std::string const & target)
 		"Obliviate",
 		"Expecto Patronum"
 	};
-	int skillsize = 5;
-	std::cout << "[" << this->Name << "] \"" << skills[rand() % skillsize] << "!!\"" << std::endl;
-
 	if (this->Energy_points < 25)
 	{
-		std::cout << "but not enough EP!!"
+		std::cout << "not enough EP!"
 		<< " ([EP] " << this->Energy_points << " / " << this->Max_energy_points << ")" << std::endl;
 		return ;
 	}
+
+	int skillsize = 5;
+	std::cout << "[" << this->Name << "] \"" << skills[rand() % skillsize] << "!!\"" << std::endl;
+
 	this->Energy_points -= 25;
-	std::cout << target << " received " << this->Ranged_attack_damage << " points of damage!" 
+	std::cout << target << " received " << this->Ranged_attack_damage << " points of damage!"
 	 << " ([EP] " << this->Energy_points << " / " << this->Max_energy_points << ")" << std::endl;
 }
 

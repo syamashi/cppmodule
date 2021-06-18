@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 14:58:45 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/07 10:26:38 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/18 13:16:50 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,36 +62,6 @@ void SuperTrap::rangedAttack(const std::string &target)
 void SuperTrap::meleeAttack(const std::string &target)
 {
 	NinjaTrap::meleeAttack(target);
-}
-
-void SuperTrap::takeDamage(unsigned int amount)
-{
-	if (amount > this->Armor_damage_reduction)
-		amount -= this->Armor_damage_reduction;
-	else
-		amount = 0;
-	if (this->Hit_points > amount)
-		this->Hit_points -= amount;
-	else
-	{
-		amount = this->Hit_points;
-		this->Hit_points = 0;
-	}
-	std::cout << "SUPR-TP " << this->Name << " received " << amount << " HP damage!!"
-	<< " ([HP] " << this->Hit_points << " / " << this->Max_hit_points << ")" << std::endl;
-}
-
-void SuperTrap::beRepaired(unsigned int amount)
-{
-	if (this->Hit_points + amount < this->Max_hit_points)
-		this->Hit_points += amount;
-	else
-	{
-		amount = this->Max_hit_points - this->Hit_points;
-		this->Hit_points = this->Max_hit_points;
-	}
-	std::cout << "SUPR-TP " << this->Name << " repaired " << amount << " HP!!"
-	<< " ([HP] " << this->Hit_points << " / " << this->Max_hit_points << ")" << std::endl;
 }
 
 SuperTrap& SuperTrap::operator=(const SuperTrap &src)

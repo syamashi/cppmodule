@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 21:37:01 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/07 10:22:53 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/18 12:04:48 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,15 +89,16 @@ void FragTrap::vaulthunter_dot_exe(std::string const & target)
 		"Obliviate",
 		"Expecto Patronum"
 	};
-	int skillsize = 5;
-	std::cout << "[" << this->Name << "] \"" << skills[rand() % skillsize] << "!!\"" << std::endl;
-
 	if (this->Energy_points < 25)
 	{
-		std::cout << "but not enough EP!!"
+		std::cout << "not enough EP!"
 		<< " ([EP] " << this->Energy_points << " / " << this->Max_energy_points << ")" << std::endl;
 		return ;
 	}
+
+	int skillsize = 5;
+	std::cout << "[" << this->Name << "] \"" << skills[rand() % skillsize] << "!!\"" << std::endl;
+
 	this->Energy_points -= 25;
 	std::cout << target << " received " << this->Ranged_attack_damage << " points of damage!"
 	 << " ([EP] " << this->Energy_points << " / " << this->Max_energy_points << ")" << std::endl;

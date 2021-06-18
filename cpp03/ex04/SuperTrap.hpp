@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 14:46:33 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/07 09:28:29 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/18 13:12:15 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ class SuperTrap : public FragTrap, public NinjaTrap
 
 		void rangedAttack(const std::string &target);
 		void meleeAttack(const std::string &target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
 
 		SuperTrap& operator=(const SuperTrap &src);
 	private:

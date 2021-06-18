@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 22:06:39 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/07 10:49:32 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/18 12:59:44 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ int main()
 	std::cout << "--------------------NINJA_TRAP-------------------" << std::endl;
 	NinjaTrap n("NYAMASHI");
 	std::cout << std::endl;
-	s.rangedAttack("ENEMY1");
-	s.meleeAttack("ENEMY2");
+	n.rangedAttack("ENEMY1");
+	n.meleeAttack("ENEMY2");
 	std::cout << std::endl;
 	for (int i = 0; i < numsize; i++)
 		n.takeDamage(nums[i]);
@@ -65,6 +65,8 @@ int main()
 	for (int i = 0; i < numsize; i++)
 		n.beRepaired(nums[i]);
 	std::cout << std::endl;
+	ClapTrap c("clapc");
+	n.ninjaShoebox(c);
 	n.ninjaShoebox(f);
 	n.ninjaShoebox(s);
 	n.ninjaShoebox(n);
