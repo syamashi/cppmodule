@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 23:14:13 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/18 15:20:20 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/20 21:44:22 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include "PowerFist.hpp"
 #include "RadScorpion.hpp"
 #include "SuperMutant.hpp"
+#include "Dotanuki.hpp"
+#include "Mamuru.hpp"
 
 void pout(std::string mes)
 {
@@ -108,8 +110,22 @@ int main()
 	mut2 = rad;
 	std::cout << *mut2;
 
+	pout("new Dotanuki");
+	Dotanuki *dot = new Dotanuki;
+	std::cout << *dot;
+	pout("new Mamuru");
+	Mamuru *mam = new Mamuru;
+	std::cout << *mam;
+	pout("equip dotanuki");
+	me->equip(dot);
+	std::cout << *me << std::endl;
+	me->attack(mam);
+	std::cout << *me;
+
+	pout("destructers");
 	delete me;
 	delete pr;
 	delete rad;
+	delete dot;
 	return 0;
 }

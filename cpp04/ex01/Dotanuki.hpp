@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.hpp                                           :+:      :+:    :+:   */
+/*   Dotanuki.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/28 17:42:21 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/20 19:44:50 by syamashi         ###   ########.fr       */
+/*   Created: 2021/05/29 17:25:56 by syamashi          #+#    #+#             */
+/*   Updated: 2021/06/20 21:30:10 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_HPP
-#define PEON_HPP
+#ifndef DOTANUKI_HPP
+#define DOTANUKI_HPP
 
 #include <iostream>
-#include "Victim.hpp"
+#include "AWeapon.hpp"
 
-class Peon : public Victim
+class Dotanuki : public AWeapon
 {
-	public:
-		Peon();
-		Peon(std::string name);
-		Peon(Peon const &src);
-		virtual ~Peon();
-
-		Peon& operator=(const Peon &src);
-		void getPolymorphed() const;
 	private:
+    public:
+        Dotanuki();
+        virtual ~Dotanuki();
+        Dotanuki(const Dotanuki &src);
+        Dotanuki& operator = (const Dotanuki &src);
+
+		void attack() const;
 };
 
 #endif

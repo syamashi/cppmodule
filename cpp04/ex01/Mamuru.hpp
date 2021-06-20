@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.hpp                                           :+:      :+:    :+:   */
+/*   Mamuru.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/28 17:42:21 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/20 19:44:50 by syamashi         ###   ########.fr       */
+/*   Created: 2021/05/29 17:25:13 by syamashi          #+#    #+#             */
+/*   Updated: 2021/06/20 21:35:56 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_HPP
-#define PEON_HPP
+#ifndef MAMURU_HPP
+#define MAMURU_HPP
 
 #include <iostream>
-#include "Victim.hpp"
+#include "Enemy.hpp"
 
-class Peon : public Victim
+class Mamuru : public Enemy
 {
-	public:
-		Peon();
-		Peon(std::string name);
-		Peon(Peon const &src);
-		virtual ~Peon();
-
-		Peon& operator=(const Peon &src);
-		void getPolymorphed() const;
 	private:
+    public:
+        Mamuru();
+        virtual ~Mamuru();
+        Mamuru(const Mamuru &src);
+        Mamuru& operator = (const Mamuru &src);
+		void takeDamage(int damage);
 };
 
 #endif

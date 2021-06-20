@@ -6,13 +6,14 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 17:50:05 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/18 15:08:19 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/20 19:52:40 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Peon.hpp"
 #include "Sorcerer.hpp"
 #include "Victim.hpp"
+#include "Kid.hpp"
 
 void pout(std::string mes)
 {
@@ -36,6 +37,9 @@ int main()
 	jim.getPolymorphed();
 	pout("Peon joe.getPolymophed()");
 	joe.getPolymorphed();
+	pout("Kid dom(dom);");
+	Kid dom("dom");
+	dom.getPolymorphed();
 	pout("destructer");
 
 	return 0;

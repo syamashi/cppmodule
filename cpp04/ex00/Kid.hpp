@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.hpp                                           :+:      :+:    :+:   */
+/*   Kid.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,21 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_HPP
-#define PEON_HPP
+#ifndef KID_HPP
+#define KID_HPP
 
 #include <iostream>
 #include "Victim.hpp"
 
-class Peon : public Victim
+class Kid : public Victim
 {
 	public:
-		Peon();
-		Peon(std::string name);
-		Peon(Peon const &src);
-		virtual ~Peon();
+		Kid();
+		Kid(std::string name);
+		Kid(Kid const &src);
+		virtual ~Kid();
 
-		Peon& operator=(const Peon &src);
+		Kid& operator=(const Kid &src);
 		void getPolymorphed() const;
 	private:
 };
