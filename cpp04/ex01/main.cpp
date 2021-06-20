@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 23:14:13 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/07 12:03:20 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/18 15:20:20 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ int main()
 	pout("me->attack(mut)");
 	me->attack(mut);
 	std::cout << *mut;
+	std::cout << *me;
 	pout("me->equip(pf)");
 	me->equip(pf);
 	std::cout << *me;
@@ -69,6 +70,7 @@ int main()
 	pout("me->attack(mut)");
 	me->attack(mut);
 	std::cout << *mut;
+	std::cout << *me;
 
 	pout("me->attack(mut)");
 	me->attack(mut);

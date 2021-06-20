@@ -6,15 +6,14 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 15:33:47 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/07 11:05:05 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/18 15:07:41 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sorcerer.hpp"
 
-Sorcerer::Sorcerer() : name("name"), title("title")
+Sorcerer::Sorcerer()
 {
-    std::cout << "Default constructor called" << std::endl;
 }
 
 Sorcerer::Sorcerer(const std::string &name, const std::string &title) : name(name), title(title)

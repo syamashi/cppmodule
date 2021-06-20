@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 17:47:56 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/07 11:07:50 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/20 16:38:19 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@ Character::Character() : _name("name")
 {
 }
 
-Character::Character(Character const &src)
+Character::Character(Character const &src) : _name(src._name), _count(src._count)
 {
-    *this = src;
+	for (int i = 0; i < 4; ++i)
+		this->_inventory[i] = NULL;
+    operator=(src);
 }
 
 Character::Character(const std::string &name) : _name(name), _count(0)
@@ -29,20 +31,29 @@ Character::Character(const std::string &name) : _name(name), _count(0)
 
 Character::~Character()
 {
-	// share materia. not delete.
+	// copy must new...
+	// but equip is not new...
 	for (int i = 0; i < 4; i++)
+	{
+		delete this->_inventory[i];
 		this->_inventory[i] = NULL;
+	}
 }
 
 Character& Character::operator=(const Character &src)
 {
     if (this == &src)
         return (*this);
-    // this->_name = src._name;
-	// 1. this invs del => no need. share materia.
-	// 2. src invs copy
 	for (int i = 0; i < 4; i++)
-		this->_inventory[i] = src._inventory[i];
+	{
+		delete this->_inventory[i];
+		this->_inventory[i] = NULL;
+	}
+	for (int i = 0; i < 4; i++)
+	{
+		if (src._inventory[i])
+			this->_inventory[i] = src._inventory[i]->clone();
+	}
 	this->_count = src._count;
     return (*this);
 }
@@ -57,6 +68,11 @@ std::string const & Character::getInvtype(int idx) const
 	return (this->_inventory[idx]->getType());
 }
 
+AMateria *const & Character::getMateria(int idx) const
+{
+	return (this->_inventory[idx]);
+}
+
 int const & Character::getCount() const
 {
 	return (this->_count);
@@ -68,7 +84,6 @@ bool Character::isblank(int idx) const
 		return (false);
 	return (true);
 }
-
 
 void Character::equip(AMateria* materia)
 {

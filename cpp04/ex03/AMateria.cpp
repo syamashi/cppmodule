@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 17:18:42 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/07 12:13:03 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/20 16:53:03 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,11 @@ AMateria& AMateria::operator=(const AMateria &src)
     this->_type = src._type;
 	this->_xp = src._xp;
     return (*this);
+}
+
+std::ostream& operator<<(std::ostream &out, AMateria const &src)
+{
+	out << "_type: " << src.getType() << std::endl;
+	out << "_xp: " << src.getXP() << std::endl;
+	return (out);
 }

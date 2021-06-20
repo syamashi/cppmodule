@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 17:25:56 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/03 16:47:37 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/18 15:35:24 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class PlasmaRifle : public AWeapon
 	private:
     public:
         PlasmaRifle();
-        ~PlasmaRifle();
+        virtual ~PlasmaRifle();
         PlasmaRifle(const PlasmaRifle &src);
         PlasmaRifle& operator = (const PlasmaRifle &src);
 

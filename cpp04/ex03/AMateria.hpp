@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 17:16:13 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/01 13:56:20 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/20 16:51:37 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,7 @@ class AMateria
 		virtual AMateria* clone() const = 0;
 		virtual void use(ICharacter& target);
 };
+
+std::ostream& operator<<(std::ostream &out, AMateria const &src);
 
 #endif

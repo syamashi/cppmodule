@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 17:48:12 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/07 11:08:03 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/20 16:18:33 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ MateriaSource::MateriaSource() : _count(0)
 		this->_memory[i] = NULL;
 }
 
-MateriaSource::MateriaSource(MateriaSource const &src)
+MateriaSource::MateriaSource(MateriaSource const &src) : _count(0)
 {
-    *this = src;
+	for (int i = 0; i < 4; ++i)
+		this->_memory[i] = NULL;
+    operator=(src);
 }
 
 MateriaSource::~MateriaSource()
@@ -73,7 +75,7 @@ void MateriaSource::learnMateria(AMateria *materia)
 	{
 		if (!this->_memory[i])
 			continue;
-		if (this->_memory[i]->getType() == materia->getType())
+		if (this->_memory[i] == materia)
 			return ;
 	}
 	for (int i = 0; i < 4; i++)
@@ -92,9 +94,9 @@ AMateria *MateriaSource::createMateria(std::string const &type)
 	{
 		if (!this->_memory[i])
 			continue;
-		// if clone, main sample must leak...
+		// me*のdeleteで消える
 		if (this->_memory[i]->getType() == type)
-			return (this->_memory[i]);
+			return (this->_memory[i]->clone());
 	}
 	return (NULL);
 }

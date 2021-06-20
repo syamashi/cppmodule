@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 14:40:47 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/31 16:24:17 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/18 22:39:36 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Squad::Squad() : count(0), units(NULL)
 
 Squad::Squad(Squad const &src)
 {
-    *this = src;
+    operator=(src);
 }
 
 Squad::~Squad()
@@ -65,7 +65,7 @@ int Squad::push(ISpaceMarine *marine)
 		ret[this->count] = marine;
 		delete [] this->units;
 		this->units = ret;
-		this->count += 1;
+		++this->count;
 		return (this->count);
 	}
 	catch(std::bad_alloc)
@@ -79,6 +79,20 @@ Squad& Squad::operator=(const Squad &src)
 {
     if (this == &src)
         return (*this);
-    // this->xxx = src.xxx
-    return (*this);
+	if (this->units)
+	{
+		for (int i = 0; i < this->count; ++i)
+		{
+			delete this->units[i];
+		}
+		delete [] this->units;
+		this->units = NULL;
+	}
+	this->units = new ISpaceMarine*[src.count];
+	this->count = src.count;
+	for (int i = 0; i < src.count; ++i)
+	{
+		this->units[i] = src.getUnit(i)->clone();
+	}
+	return (*this);
 }

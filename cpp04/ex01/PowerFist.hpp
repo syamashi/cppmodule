@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 17:25:52 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/31 10:32:36 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/18 15:35:19 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ class PowerFist : public AWeapon
 	private:
     public:
         PowerFist();
-        ~PowerFist();
+        virtual ~PowerFist();
         PowerFist(const PowerFist &src);
         PowerFist& operator = (const PowerFist &src);
-		
+
 		void attack() const;
 };
 

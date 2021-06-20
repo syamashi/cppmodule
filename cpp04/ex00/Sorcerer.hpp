@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 15:31:39 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/07 11:02:08 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/18 15:07:47 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 class Sorcerer
 {
 	public:
-		Sorcerer();
 		Sorcerer(const std::string &name, const std::string &title);
 		Sorcerer(Sorcerer const &src);
 		~Sorcerer();
@@ -29,6 +28,7 @@ class Sorcerer
 		void polymorph(Victim const &vct) const;
 		Sorcerer& operator=(const Sorcerer &src);
 	private:
+		Sorcerer();
 		std::string name;
 		std::string title;
 };
