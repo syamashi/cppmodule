@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 15:17:58 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/21 16:11:31 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/21 16:25:22 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,27 +38,15 @@ std::string str_rand(void)
 
 void *serialize(void)
 {
-	void *ret = reinterpret_cast<void*>(new char[68]);
-	Data d;
-	std::string *ps1;
-	int	*pn;
-	std::string *ps2;
+	Data *ret = new Data;
+	
+	ret->s1 = str_rand();
+	ret->n = rand() % 10000;
+	ret->s2 = str_rand();
 
-	d.s1 = str_rand();
-	d.n = rand() % 10000;
-	d.s2 = str_rand();
-
-	ps1 = reinterpret_cast<std::string*>(ret);
-	*ps1 = d.s1;
-	std::cout << "ps1: " << ps1 << std::endl;
-	++ps1; //24byte(string) 動く
-	pn = reinterpret_cast<int*>(ps1);
-	std::cout << " pn: " << pn << std::endl;
-	*pn = d.n;
-	++pn; // 4byte(int) 動く
-	ps2 = reinterpret_cast<std::string*>(pn);
-	std::cout << "ps2: " << ps2 << std::endl;
-	*ps2 = d.s2; // segf
+	std::cout << "&ret->s1: " << &ret->s1 << std::endl;
+	std::cout << "&ret->n : " << &ret->n  << std::endl;
+	std::cout << "&ret->s2: " << &ret->s2 << std::endl;
 	return (ret);
 }
 
