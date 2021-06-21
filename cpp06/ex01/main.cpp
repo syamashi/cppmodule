@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 15:17:58 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/21 13:31:31 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/21 15:39:44 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,26 +25,46 @@ void pout(const std::string &mes)
 	std::cout << " ------ " << mes << " ------ " << std::endl;
 }
 
-void *serialize(void)
+std::string str_rand(void)
 {
-	char *ret = new char[21];
+	std::string ret = "";
 	std::string bases = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz";
 	int bases_len = bases.length();
-	for (int i = 0; i < 8; i++)
-		ret[i] = bases[rand() % bases_len];
-	*reinterpret_cast<int*>(ret + 8) = rand() % 10000;
-	for (int i = 12; i < 20; i++)
-		ret[i] = bases[rand() % bases_len];
-	ret[20] = '\0';
+	for (int i = 0; i < 8; ++i)
+		ret += bases[rand() % bases_len];
+	return (ret.c_str());
+}
+
+void *serialize(void)
+{
+	void *ret = reinterpret_cast<void*>(new char[52]);
+	Data d;
+	std::string *ps1;
+	int	*pn;
+	std::string *ps2;
+
+	d.s1 = str_rand();
+	d.n = rand() % 10000;
+	d.s2 = str_rand();
+
+	ps1 = reinterpret_cast<std::string*>(ret);
+	*ps1 = d.s1;
+	std::cout << "ps1: " << ps1 << std::endl;
+	++ps1;
+	pn = reinterpret_cast<int*>(ps1);
+	std::cout << "pn: " << pn << std::endl;
+	*pn = d.n;
+	++pn;
+	ps2 = reinterpret_cast<std::string*>(pn);
+	std::cout << "ps2: " << ps2 << std::endl;
+	*ps2 = d.s2;
 	return (ret);
 }
 
 Data * deserialize(void * raw)
 {
 	Data *ret = new Data;
-	ret->s1 = std::string(reinterpret_cast<char*>(raw), 8);
-	ret->n = *reinterpret_cast<int*>(reinterpret_cast<char*>(raw) + 8);
-	ret->s2 = std::string(reinterpret_cast<char*>(raw) + 12, 8);
+	ret = reinterpret_cast<Data*>(raw);
 	return (ret);
 }
 
@@ -54,10 +74,12 @@ int main()
 	try
 	{
 		void * raw = serialize();
+
 		Data * dat = deserialize(raw);
+		return 0;
 		std::cout << dat->s1 << " " << dat->n << " " << dat->s2 << std::endl;
 		delete dat;
-		delete reinterpret_cast<char*>(raw);
+//		delete reinterpret_cast<char*>(raw);
 		// delete *void is undefined command...
 	}
 	catch(const std::exception& e)
