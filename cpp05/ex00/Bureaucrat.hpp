@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 13:58:31 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/07 17:00:20 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/21 08:47:09 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Bureaucrat
 {
     private:
-		std::string _name;
+		const std::string _name;
 		int _grade;
     public:
         Bureaucrat();

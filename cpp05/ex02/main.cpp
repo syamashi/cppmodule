@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:37:59 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/04 12:09:26 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/21 10:21:04 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 void pout(const std::string &mes)
 {
-	std::cout << "--- " << mes << " ---" << std::endl;
+	std::cout << std::endl << " --- " << mes << " --- " << std::endl;
 }
 
 int main()
@@ -34,92 +34,53 @@ int main()
 
 	pout("new ShrubberyCreationForm(shr)");
 	ShrubberyCreationForm *shr = new ShrubberyCreationForm("shr"); //低木
-	std::cout << *shr << std::endl;
+	std::cout << *shr;
 
 	pout("new RobotomyRequestForm(rbt)");
 	RobotomyRequestForm *rbt = new RobotomyRequestForm("rbt");
-	std::cout << *rbt << std::endl;
+	std::cout << *rbt;
 
 	pout("new PresidentialPardonForm(prs)");
 	PresidentialPardonForm *prs = new PresidentialPardonForm("prs");
-	std::cout << *prs << std::endl;
+	std::cout << *prs;
 
-	pout("shr->execute(*mr137)");
-	try
-	{
-		shr->execute(*mr137);
-	}
-	catch (const std::exception &e)
-	{
-		std::cout << e.what() << std::endl << std::endl;
-	}
-	pout("shr->beSigned(mr138)");
-	shr->beSigned(*mr138);
+	pout("mr137->executeForm(*shr)");
+	mr137->executeForm(*shr);
+	pout("mr138->signForm(*shr)");
+	mr138->signForm(*shr);
 	std::cout << *shr << std::endl;
-	pout("shr->execute(*mr138)");
-	try
-	{
-		shr->execute(*mr138);
-	}
-	catch(const std::exception &e)
-	{
-		std::cout << e.what() << std::endl << std::endl;
-	}
-	pout("shr->execute(*mr137)");
-	shr->execute(*mr137);
-	std::cout << "is there <shr_shrubbery> file?" << std::endl << std::endl;
+	pout("mr138->signForm(*shr)");
+	mr138->executeForm(*shr);
+	pout("mr137->executeForm(*shr)");
+	mr137->executeForm(*shr);
 
-	pout("rbt->execute(*mr45)");
-	try
-	{
-		rbt->execute(*mr45);
-	}
-	catch (const std::exception &e)
-	{
-		std::cout << e.what() << std::endl << std::endl;
-	}
-	pout("rbt->beSigned(mr46)");
-	rbt->beSigned(*mr46);
+	pout("mr45->executeForm(*rbt)");
+	mr45->executeForm(*rbt);
+	pout("mr46->signForm(*rbt)");
+	mr46->signForm(*rbt);
 	std::cout << *rbt << std::endl;
-	pout("rbt->execute(*mr46)");
-	try
-	{
-		rbt->execute(*mr46);
-	}
-	catch(const std::exception &e)
-	{
-		std::cout << e.what() << std::endl << std::endl;
-	}
-	pout("rbt->execute(*mr45)");
-	rbt->execute(*mr45);
-	rbt->execute(*mr45);
-	rbt->execute(*mr45);
-	rbt->execute(*mr45);
-	rbt->execute(*mr45);
+	pout("mr46->executeForm(*rbt)");
+	mr46->executeForm(*rbt);
 
-	pout("prs->execute(*mr5)");
-	try
-	{
-		prs->execute(*mr5);
-	}
-	catch (const std::exception &e)
-	{
-		std::cout << e.what() << std::endl << std::endl;
-	}
-	pout("prs->beSigned(mr6)");
-	prs->beSigned(*mr6);
+	pout("mr45->executeForm(*rbt)");
+	mr45->executeForm(*rbt);
+	mr45->executeForm(*rbt);
+	mr45->executeForm(*rbt);
+	mr45->executeForm(*rbt);
+	mr45->executeForm(*rbt);
+
+	pout("mr5->executeForm(*prs)");
+	mr5->executeForm(*prs);
+
+	pout("mr6->signForm(*prs)");
+	mr6->signForm(*prs);
 	std::cout << *prs << std::endl;
-	pout("prs->execute(*mr6)");
-	try
-	{
-		prs->execute(*mr6);
-	}
-	catch(const std::exception &e)
-	{
-		std::cout << e.what() << std::endl << std::endl;
-	}
-	pout("prs->execute(*mr5)");
-	prs->execute(*mr5);
+
+	pout("mr6->executeForm(*prs)");
+	mr6->executeForm(*prs);
+
+	pout("mr5->executeForm(*prs)");
+	mr5->executeForm(*prs);
 
 	delete mr138;
 	delete mr137;

@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 13:58:53 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/07 13:26:12 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/21 09:52:23 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,20 @@ void Bureaucrat::signForm(Form &_form)
 	{
 		std::cout << this->_name << " cannot sign " << _form.getName() << " because " << ex.what() << std::endl;
 	}
+}
+
+void Bureaucrat::executeForm(Form const & form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->_name << " executes " << form.getName() << std::endl;
+	}
+	catch(const std::exception& ex)
+	{
+		std::cout << ex.what() << '\n';
+	}
+	
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw() // throwを投げると、what()の中に文字列を入れる

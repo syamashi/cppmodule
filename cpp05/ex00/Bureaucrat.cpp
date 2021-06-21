@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 13:58:53 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/07 13:25:35 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/21 08:51:01 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat &src)
     if (this == &src)
         return (*this);
 	this->_grade = src._grade;
-	this->_name = src._name;
     return (*this);
 }
 

@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 13:58:31 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/03 16:38:13 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/21 09:44:26 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class Bureaucrat
 		void decG();
 
 		void signForm(Form &_br);
-
+		void executeForm(Form const & form);
 		class GradeTooHighException : public std::exception
 		{
 			public:
