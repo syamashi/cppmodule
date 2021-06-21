@@ -6,19 +6,20 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 15:17:58 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/21 15:39:44 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/21 16:11:31 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <time.h>
-#pragma pack(1)
 
+#pragma pack(1)
 struct Data {
 	std::string s1;
 	int n;
 	std::string s2;
 };
+#pragma pack()
 
 void pout(const std::string &mes)
 {
@@ -32,12 +33,12 @@ std::string str_rand(void)
 	int bases_len = bases.length();
 	for (int i = 0; i < 8; ++i)
 		ret += bases[rand() % bases_len];
-	return (ret.c_str());
+	return (ret);
 }
 
 void *serialize(void)
 {
-	void *ret = reinterpret_cast<void*>(new char[52]);
+	void *ret = reinterpret_cast<void*>(new char[68]);
 	Data d;
 	std::string *ps1;
 	int	*pn;
@@ -50,14 +51,14 @@ void *serialize(void)
 	ps1 = reinterpret_cast<std::string*>(ret);
 	*ps1 = d.s1;
 	std::cout << "ps1: " << ps1 << std::endl;
-	++ps1;
+	++ps1; //24byte(string) 動く
 	pn = reinterpret_cast<int*>(ps1);
-	std::cout << "pn: " << pn << std::endl;
+	std::cout << " pn: " << pn << std::endl;
 	*pn = d.n;
-	++pn;
+	++pn; // 4byte(int) 動く
 	ps2 = reinterpret_cast<std::string*>(pn);
 	std::cout << "ps2: " << ps2 << std::endl;
-	*ps2 = d.s2;
+	*ps2 = d.s2; // segf
 	return (ret);
 }
 
@@ -65,6 +66,7 @@ Data * deserialize(void * raw)
 {
 	Data *ret = new Data;
 	ret = reinterpret_cast<Data*>(raw);
+	std::cout << ret->s1 << " " << ret->n << " " << ret->s2 << std::endl;
 	return (ret);
 }
 
