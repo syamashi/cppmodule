@@ -6,12 +6,13 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 15:17:58 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/07 17:57:55 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/21 13:31:31 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <time.h>
+#pragma pack(1)
 
 struct Data {
 	std::string s1;
@@ -63,4 +64,6 @@ int main()
 	{
 		std::cout << e.what() << '\n';
 	}
+	std::cout << sizeof(std::string) << std::endl;
+	std::cout << sizeof(Data) << std::endl;
 }
