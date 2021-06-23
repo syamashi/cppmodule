@@ -22,7 +22,7 @@ class Ice : public AMateria
     private:
     public:
         Ice();
-        ~Ice();
+        virtual ~Ice();
         Ice(const Ice &src);
         Ice& operator = (const Ice &src);
 

@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 13:58:53 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/21 09:52:23 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/23 13:23:33 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,6 @@ void Bureaucrat::executeForm(Form const & form)
 	{
 		std::cout << ex.what() << '\n';
 	}
-	
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw() // throwを投げると、what()の中に文字列を入れる
