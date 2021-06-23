@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 17:48:31 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/01 11:12:20 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/23 13:20:09 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Cure : public AMateria
     private:
     public:
         Cure();
-        ~Cure();
+        virtual ~Cure();
         Cure(const Cure &src);
         Cure& operator = (const Cure &src);
 

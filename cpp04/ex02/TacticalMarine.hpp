@@ -21,7 +21,7 @@ class TacticalMarine : public ISpaceMarine
     private:
     public:
         TacticalMarine();
-        ~TacticalMarine();
+        virtual ~TacticalMarine();
         TacticalMarine(const TacticalMarine &src);
         TacticalMarine& operator = (const TacticalMarine &src);
 

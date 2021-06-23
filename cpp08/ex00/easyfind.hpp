@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 10:12:19 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/09 15:32:58 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/22 14:49:16 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ class NotFoundException : public std::exception
 			return ("value does not found");
 		};
 };
-
 
 template<typename T>
 typename T::iterator easyfind(T &t, int n)

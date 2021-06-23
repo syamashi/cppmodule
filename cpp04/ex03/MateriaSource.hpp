@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 17:49:08 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/01 15:42:31 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/22 13:02:52 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class MateriaSource : public IMateriaSource
 		int	_count;
     public:
         MateriaSource();
-        ~MateriaSource();
+        virtual ~MateriaSource();
         MateriaSource(const MateriaSource &src);
         MateriaSource& operator = (const MateriaSource &src);
 

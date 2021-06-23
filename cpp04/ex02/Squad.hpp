@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 13:25:28 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/31 16:24:07 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/22 13:02:18 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Squad : public ISquad
 		ISpaceMarine **units;
     public:
         Squad();
-        ~Squad();
+        virtual ~Squad();
         Squad(const Squad &src);
         Squad& operator = (const Squad &src);
 

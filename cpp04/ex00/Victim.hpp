@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 15:31:39 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/29 17:15:25 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/22 13:00:45 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Victim
 		Victim();
 		Victim(const std::string &name);
 		Victim(const Victim &src);
-		~Victim();
+		virtual ~Victim();
 		std::string get_name() const;
 		virtual void getPolymorphed() const;
 		Victim& operator=(const Victim &src);

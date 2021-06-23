@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 14:40:47 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/18 22:39:36 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/22 14:34:32 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Squad::Squad() : count(0), units(NULL)
 {
 }
 
-Squad::Squad(Squad const &src)
+Squad::Squad(Squad const &src) : count(0), units(NULL)
 {
     operator=(src);
 }

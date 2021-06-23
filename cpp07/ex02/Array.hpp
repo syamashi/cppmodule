@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 09:42:41 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/13 08:48:22 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/22 14:40:36 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ int Array<T>::size() const
 template<typename T>
 Array<T>& Array<T>::operator=(const Array<T> &src)
 {
+	if (this == &src)
+		return (*this);
 	delete [] this->_arr;
 	this->_arr = new T[src._size];
 	for (int i = 0; i < src._size; ++i)

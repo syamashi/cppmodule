@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 13:25:21 by syamashi          #+#    #+#             */
-/*   Updated: 2021/05/31 15:52:07 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/22 13:01:34 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class AssaultTerminator : public ISpaceMarine
     private:
     public:
         AssaultTerminator();
-        ~AssaultTerminator();
+        virtual ~AssaultTerminator();
         AssaultTerminator(const AssaultTerminator &src);
         AssaultTerminator& operator = (const AssaultTerminator &src);
 
