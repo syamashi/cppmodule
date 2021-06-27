@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 08:05:44 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/11 09:53:05 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/27 18:52:15 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int main()
 	{
 		std::cout << e.what() << '\n';
 	}
-	pout("addNumber(3,5,...,19999)");
+	pout("addNumber(3,5,...,39999)");
 	for (int i = 3; i < 40000; i += 2)
 	{
 		sp2.addNumber(i);

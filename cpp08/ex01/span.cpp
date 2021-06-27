@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 15:43:11 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/27 18:42:13 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/27 18:52:37 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ unsigned int Span::longestSpan()
 
 const char *Span::FilledException::what() const throw()
 {
-	return ("vector is filled");
+	return ("vector is full");
 }
 
 const char *Span::NotEnoughSizeException::what() const throw()
