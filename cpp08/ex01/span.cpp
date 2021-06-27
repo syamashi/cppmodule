@@ -6,11 +6,11 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 15:43:11 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/11 09:36:22 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/27 18:42:13 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Span.hpp"
+#include "span.hpp"
 
 Span::Span()
 {
@@ -21,7 +21,7 @@ Span::Span(Span const &src)
     *this = src;
 }
 
-Span::Span(int N) : _N(N)
+Span::Span(int N) : _N(N), _size(0)
 {
 }
 
