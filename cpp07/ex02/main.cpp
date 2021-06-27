@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 09:59:04 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/13 08:46:29 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/27 19:00:49 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ int main()
 		Array<int> copy(ints);
 		for (int i = 0; i < 3; ++i)
 		{
-			ints[i] = i + 10;
 			std::cout << "copy[" << i << "]:" << copy[i] << std::endl;
 		}
 		std::cout << "copy.size(): " << copy.size() << std::endl;
@@ -75,7 +74,6 @@ int main()
 		Array<int> equal = copy;
 		for (int i = 0; i < 3; ++i)
 		{
-			ints[i] = i + 10;
 			std::cout << "equal[" << i << "]:" << equal[i] << std::endl;
 		}
 		std::cout << "equal.size(): " << equal.size() << std::endl;
@@ -85,7 +83,6 @@ int main()
 			equal[i] = equal[0];
 		for (int i = 0; i < 3; ++i)
 		{
-			ints[i] = i + 10;
 			std::cout << "equal[" << i << "]:" << equal[i] << std::endl;
 		}
 		std::cout << "equal.size(): " << equal.size() << std::endl;

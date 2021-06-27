@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 08:05:44 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/27 18:52:15 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/27 19:00:15 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int main()
 	try
 	{
 		pout("sp2.shortestSpan()");
+		std::cout << "_size: " << sp2.get_size() << std::endl;
 		sp2.shortestSpan();
 	}
 	catch(const std::exception& e)
@@ -51,6 +52,7 @@ int main()
 	}
 	pout("sp2.addNumber(1)");
 	sp2.addNumber(1);
+	std::cout << "_size: " << sp2.get_size() << std::endl;
 	try
 	{
 		pout("sp2.shortestSpan()");
@@ -74,13 +76,15 @@ int main()
 	{
 		sp2.addNumber(i);
 	}
-	std::cout << sp2.shortestSpan() << std::endl;
-	std::cout << sp2.longestSpan() << std::endl;
+	std::cout << "_size: " << sp2.get_size() << std::endl;
+	std::cout << "shortestSpan(): " << sp2.shortestSpan() << std::endl;
+	std::cout << "longestSpan(): " << sp2.longestSpan() << std::endl;
 
 	try
 	{
 		pout("addNumber(40001)");
 		sp2.addNumber(40001);
+		std::cout << "_size: " << sp2.get_size() << std::endl;
 	}
 	catch(const std::exception& e)
 	{

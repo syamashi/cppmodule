@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 15:43:11 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/27 18:52:37 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/27 18:57:11 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@ Span::Span(int N) : _N(N), _size(0)
 
 Span::~Span()
 {
+}
+
+int Span::get_size() const
+{
+	return (this->_size);
 }
 
 Span& Span::operator=(const Span &src)

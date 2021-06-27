@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 15:40:33 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/27 18:39:19 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/06/27 18:56:49 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ class Span
         Span(const Span &src);
         Span(int N);
         Span& operator = (const Span &src);
+
+		int get_size() const;
 
 		void addNumber(const int &n);
 		unsigned int shortestSpan();
