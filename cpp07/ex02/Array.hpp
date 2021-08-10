@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 09:42:41 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/22 14:40:36 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/08/10 17:43:37 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ template<typename T>
 Array<T>::Array(unsigned int n) : _size(n)
 {
 	this->_arr = new T[n];
+	for (unsigned int i = 0; i < n; ++i)
+		_arr[i] = T();
 }
 
 template<typename T>

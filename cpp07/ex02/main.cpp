@@ -6,7 +6,7 @@
 /*   By: syamashi <syamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 09:59:04 by syamashi          #+#    #+#             */
-/*   Updated: 2021/06/27 19:00:49 by syamashi         ###   ########.fr       */
+/*   Updated: 2021/08/10 17:45:00 by syamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,11 @@ int main()
 	{
 		pout("Array<int> ints(3)");
 		Array<int> ints(3);
+		for (int i = 0; i < 3; ++i)
+			std::cout << "ints[" << i << "]:" << ints[i] << std::endl;
+		std::cout << "ints.size(): " << ints.size() << std::endl;
+		
+		pout("Array<int> ints(3) = {10, 11, 12}");
 		for (int i = 0; i < 3; ++i)
 		{
 			ints[i] = i + 10;
